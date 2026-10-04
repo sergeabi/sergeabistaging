@@ -18,6 +18,7 @@ Every change, by anyone, goes through a branch, a private preview and Serge's ap
 - The WordPress theme, plugins and database (once the site moves into WordPress).
 - Server, DNS, Cloudflare, SSL and security settings.
 - The deployment itself: previews, the staging update, backups, tags and rollback.
+- `functions/` (the login on the preview address).
 - Search-engine settings: `noindex`, redirects, sitemaps.
 - Repository settings and access.
 
