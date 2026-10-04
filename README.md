@@ -21,6 +21,7 @@
 | `site/assets/` | Images (WebP) and the Manrope font |
 | `site/favicon.svg` | Browser tab icon |
 | `docs/EDITING_RULES.md` | What ChatGPT or Aya may change, and what stays with Shoaib |
+| `functions/_middleware.js` | Login on sergeabistaging.pages.dev (same as staging); branch previews use Cloudflare Access |
 
 ## Notes
 
