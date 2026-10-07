@@ -77,3 +77,6 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 .journey-steps{max-width:500px;margin:28px 0 0;padding-left:1.4em;color:var(--muted)}.journey-steps li+li{margin-top:12px}.journey-steps li::marker{color:var(--gold)}.rtl .journey-steps{padding-left:0;padding-right:1.4em}
 
 .journey-copy>p.journey-manifesto-cta{font-size:clamp(21px,2vw,28px);line-height:1.4;color:var(--text);letter-spacing:-.02em}
+
+/* Mobile menu readability and hero arrow placement */
+@media(max-width:760px){#mobile-nav{padding:45px 24px calc(120px + env(safe-area-inset-bottom));overflow-y:auto}.mobile-language button{font-size:9px}.hero-link svg{top:-14px}}
