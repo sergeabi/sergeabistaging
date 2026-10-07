@@ -63,3 +63,23 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 .aya-chat-widget{position:fixed;left:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:11px;padding:13px 17px;border:1px solid #c6a86e88;border-radius:999px;background:#172019;color:var(--text);font-size:13px;font-weight:600;line-height:1.2;box-shadow:0 10px 30px #0006;backdrop-filter:blur(12px);transition:background .25s,transform .25s,border-color .25s}.aya-chat-widget:hover{background:#243329;border-color:var(--gold);transform:translateY(-2px)}.aya-chat-widget:focus-visible{outline:2px solid var(--gold);outline-offset:5px}.aya-chat-widget svg{width:23px;height:23px;flex:none;fill:#c6a86e}.rtl .aya-chat-widget{flex-direction:row-reverse}@media(max-width:760px){.aya-chat-widget{left:16px;bottom:16px;padding:12px 14px;font-size:12px}.aya-chat-widget svg{width:22px;height:22px}}
 
 .text-magnifier{position:fixed}.text-magnifier .zoom-level{position:absolute;right:2px;bottom:1px;min-width:18px;padding:1px 3px;border:1px solid #c6a86e88;border-radius:8px;background:#10130f;color:var(--gold);font:600 8px/1.2 var(--body);text-align:center;letter-spacing:0}.rtl .text-magnifier .zoom-level{right:auto;left:2px}
+
+/* Mobile spacing polish: keep fixed widgets clear of hero captions and give Section 10 room to breathe. */
+@media(max-width:760px){.hero-bottom{bottom:clamp(88px,11vh,100px)}.chapter{padding-top:32px}}
+
+/* Final mobile hero composition: lower the artwork without moving copy, and lift the linked arrow. */
+@media(max-width:760px){.hero-picture{transform:translateY(3%) scale(1.06)!important}.hero-link svg{position:relative;top:-7px}}
+
+/* Manifesto: give the empathy line equal breathing room above and below. */
+.manifesto-copy p>.manifesto-lead,.manifesto-copy p>.manifesto-followup{display:block}.manifesto-copy p>.manifesto-empathy{display:block;margin-block:1em;color:var(--text);font-size:1.25em;line-height:1.4}.manifesto-copy p .manifesto-question{display:block}.manifesto-copy p .manifesto-question+.manifesto-question{margin-top:.55em}
+
+/* Story next-step list */
+.journey-steps{max-width:500px;margin:28px 0 0;padding-left:1.4em;color:var(--muted)}.journey-steps li+li{margin-top:12px}.journey-steps li::marker{color:var(--gold)}.rtl .journey-steps{padding-left:0;padding-right:1.4em}
+
+.journey-copy>p.journey-manifesto-cta{font-size:clamp(21px,2vw,28px);line-height:1.4;color:var(--text);letter-spacing:-.02em}
+
+/* Mobile menu readability and hero arrow placement */
+@media(max-width:760px){#mobile-nav{padding:45px 24px calc(120px + env(safe-area-inset-bottom));overflow-y:auto}#mobile-nav a{font-size:28px}.mobile-language button{width:30px;height:30px;font-size:12px}.hero-link svg{top:-28px}}
+
+/* Mobile connect orbit alignment */
+@media(max-width:760px){.connect-aside{justify-content:flex-start}.connect-aside .connect-orbit{margin:0 auto 0 0}}
