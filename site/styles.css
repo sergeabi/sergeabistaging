@@ -113,3 +113,18 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 .journey-transformation-steps>p{font-size:17px;max-width:100%}
 .journey-milestones{margin-top:36px}
 }
+
+/* Final desktop spacing refinements */
+.journey-manifesto-cta>span,.journey-manifesto-cta>em{display:block}
+@media(min-width:761px){
+.hero-bottom{bottom:clamp(88px,10vh,116px)}
+.manifesto-copy{grid-column:1/-1;max-width:none;margin-left:0;margin-right:0}
+.journey-transformation>.journey-manifesto-cta{grid-column:1/-1;max-width:none;font-size:clamp(52px,6vw,96px);line-height:1.08;letter-spacing:-.055em}
+.journey-manifesto-cta>em{color:var(--gold);font-size:1.04em}
+.journey-transformation-steps{grid-column:2;margin-top:clamp(32px,4vw,58px)}
+.connect-aside{position:relative;left:-42px}
+}
+@media(max-width:760px){
+.manifesto-copy{margin:3px 0 50px}
+.journey-manifesto-cta>em{color:var(--gold);font-size:1.08em}
+}
