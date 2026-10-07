@@ -66,3 +66,6 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 
 /* Mobile spacing polish: keep fixed widgets clear of hero captions and give Section 10 room to breathe. */
 @media(max-width:760px){.hero-bottom{bottom:clamp(88px,11vh,100px)}.chapter{padding-top:32px}}
+
+/* Final mobile hero composition: lower the artwork without moving copy, and lift the linked arrow. */
+@media(max-width:760px){.hero-picture{transform:translateY(3%) scale(1.06)!important}.hero-link svg{position:relative;top:-7px}}
