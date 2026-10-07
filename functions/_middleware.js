@@ -1,13 +1,14 @@
-// The production preview address (sergeabistaging.pages.dev) asks for the same login as staging.sergeabi.com.
-// Branch previews (*.sergeabistaging.pages.dev) are already behind Cloudflare Access, so they are left to it.
+// Every address that shows main (sergeabistaging.pages.dev, staging.sergeabi.com since 7 Oct, and any custom domain
+// added later) asks for the login. Branch previews (<branch>.sergeabistaging.pages.dev) are behind Cloudflare Access,
+// so they are left to it.
 // The password lives only in Cloudflare (Pages → Settings → Variables and Secrets → SITE_PASSWORD), never in this
 // repository. Without it the address stays closed.
-const HOST = 'sergeabistaging.pages.dev';
+const PREVIEW_SUFFIX = '.sergeabistaging.pages.dev';
 const USER = 'serge';
 const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
 
 export async function onRequest({ request, env, next }) {
-  if (new URL(request.url).hostname !== HOST) return next();
+  if (new URL(request.url).hostname.endsWith(PREVIEW_SUFFIX)) return next();   // a branch preview: Cloudflare Access
 
   const expected = env.SITE_PASSWORD;
   if (!expected) return new Response('Not available', { status: 503, headers: NOINDEX });
