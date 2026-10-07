@@ -50,3 +50,6 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 
 /* Mobile fixes requested: use the existing hero asset and keep the manifesto copy aligned without the decorative star. */
 @media(max-width:760px){.manifesto-copy{grid-template-columns:1fr;gap:0}.manifesto-copy .gold-star{display:none}}
+
+/* Mobile hero framing */
+@media(max-width:760px){.hero{min-height:100svh;height:100svh}.hero-picture img{object-position:70% 52%}.hero-bottom{bottom:clamp(52px,8vh,68px)}}
