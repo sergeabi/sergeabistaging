@@ -128,3 +128,6 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 .manifesto-copy{margin:3px 0 50px}
 .journey-manifesto-cta>em{color:var(--gold);font-size:1.08em}
 }
+
+/* Align the journey next-step list with the left edge on desktop. */
+@media(min-width:761px){.journey-transformation-steps{grid-column:1;justify-self:start}}
