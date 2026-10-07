@@ -72,3 +72,6 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 
 /* Manifesto: give the empathy line equal breathing room above and below. */
 .manifesto-copy p>.manifesto-lead,.manifesto-copy p>.manifesto-followup{display:block}.manifesto-copy p>.manifesto-empathy{display:block;margin-block:1em;color:var(--text);font-size:1.25em;line-height:1.4}.manifesto-copy p .manifesto-question{display:block}.manifesto-copy p .manifesto-question+.manifesto-question{margin-top:.55em}
+
+/* Story next-step list */
+.journey-steps{max-width:500px;margin:28px 0 0;padding-left:1.4em;color:var(--muted)}.journey-steps li+li{margin-top:12px}.journey-steps li::marker{color:var(--gold)}.rtl .journey-steps{padding-left:0;padding-right:1.4em}
