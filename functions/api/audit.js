@@ -9,7 +9,8 @@
 //     marketing consent, starts the Day 1/3/7/14 sequence (Plunk event "crossroads-audit-sequence").
 //  5. Records in Aya what was sent.
 //
-// Cloudflare secrets: PLUNK_API_KEY, AYA_AUDIT_SECRET. Optional variables: AYA_AUDIT_URL, PLUNK_API_URL, AUDIT_FROM.
+// Cloudflare secrets: PLUNK_API_KEY (secret key, sk_…), PLUNK_PUBLIC_KEY (public key, pk_…, for the sequence event),
+// AYA_AUDIT_SECRET. Optional variables: AYA_AUDIT_URL, PLUNK_API_URL, AUDIT_FROM.
 
 const CONSENT_VERSION = 'crossroads-audit-2026-10-09';
 const SOURCE = 'Sergeabi.com Crossroads Audit';
@@ -220,8 +221,10 @@ export async function onRequestPost({ request, env, waitUntil }) {
   let sequence = v.marketingConsent ? 'not started' : 'not consented';
   let tracked = null;
   if (reportOk && v.marketingConsent && saved.data.start_sequence) {
-    tracked = await post(`${plunk}/v1/track`, auth, { event: SEQUENCE_EVENT, email: v.email, subscribed: true,
-                                                      data: contactData });
+    // Plunk's /v1/track takes the project's public key (pk_…); the secret key is refused there (401, 10 Oct 2026).
+    const trackAuth = env.PLUNK_PUBLIC_KEY ? { Authorization: `Bearer ${env.PLUNK_PUBLIC_KEY}` } : auth;
+    tracked = await post(`${plunk}/v1/track`, trackAuth, { event: SEQUENCE_EVENT, email: v.email, subscribed: true,
+                                                           data: contactData });
     sequence = accepted(tracked) ? 'started' : 'failed';
   } else if (v.marketingConsent && !saved.data.start_sequence) {
     sequence = 'not started: unsubscribed before';
