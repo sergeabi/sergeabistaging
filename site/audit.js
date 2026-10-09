@@ -137,10 +137,11 @@
       <label class="audit-consent"><input name="deliveryConsent" type="checkbox" required><span>Send my personalized result and process my answers according to the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span></label>
       <label class="audit-consent"><input name="marketingConsent" type="checkbox"><span>Yes, I would also like thoughtful follow-up emails from Serge. I can unsubscribe at any time.</span></label>
       <input type="hidden" name="profile" value="${escapeHtml(result.profile)}"><input type="hidden" name="primaryArea" value="${escapeHtml(state.answers.q1)}">
+      <div class="audit-trap" aria-hidden="true"><label for="audit-website">Website</label><input id="audit-website" name="website" tabindex="-1" autocomplete="off"></div>
       <div class="audit-result-actions"><button class="audit-primary" type="submit">Send my report</button><button class="audit-secondary" type="button" data-audit-action="close-email">Back to my result</button></div>
       <p class="form-status" id="audit-form-status" role="status" aria-live="polite"></p>
-      <small class="audit-disclaimer">Secure email and CRM delivery will be connected before launch.</small>
     </form>`;
+    state.formOpenedAt = Date.now();
     focusHeading();
   }
 
@@ -170,11 +171,49 @@
     render();
   });
 
-  root.addEventListener('submit', event => {
-    if (event.target.id !== 'audit-result-form') return;
+  // The answers go to the site's own server-side endpoint (functions/api/audit.js) in the request body, never in the
+  // address; the endpoint recomputes the result, saves the consent and sends the email.
+  root.addEventListener('submit', async event => {
+    const form = event.target;
+    if (form.id !== 'audit-result-form') return;
     event.preventDefault();
-    if (!event.target.reportValidity()) return;
-    document.getElementById('audit-form-status').textContent = 'Preview only: your result has not been sent or stored. Secure delivery will be activated before launch.';
+    if (!form.reportValidity()) return;
+    const status = document.getElementById('audit-form-status');
+    const button = form.querySelector('button[type="submit"]');
+    if (button.disabled) return;
+    button.disabled = true;
+    form.setAttribute('aria-busy', 'true');
+    status.classList.remove('is-error', 'is-success');
+    status.textContent = 'Sending your report…';
+    let message = 'We could not send your report just now. Please check your connection and try again.';
+    let sent = false;
+    try {
+      const res = await fetch('/api/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: form.elements.firstName.value,
+          email: form.elements.email.value,
+          deliveryConsent: form.elements.deliveryConsent.checked,
+          marketingConsent: form.elements.marketingConsent.checked,
+          answers: state.answers,
+          language: document.documentElement.lang || 'en',
+          website: form.elements.website.value,
+          startedAt: state.formOpenedAt || 0
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (data && data.message) message = data.message;
+      sent = res.ok && data.ok === true;
+    } catch (error) { /* network error: the message above */ }
+    status.textContent = message;
+    status.classList.add(sent ? 'is-success' : 'is-error');
+    form.removeAttribute('aria-busy');
+    if (sent) {
+      form.querySelectorAll('input, button[type="submit"]').forEach(el => { el.disabled = true; });
+    } else {
+      button.disabled = false;
+    }
   });
 
   render();
