@@ -213,20 +213,24 @@ export async function onRequestPost({ request, env, waitUntil }) {
     data: contactData,
     ...(v.marketingConsent ? { subscribed: true } : {}),
   });
-  const reportOk = sent.status === 200 && sent.data && sent.data.success !== false;
+  const accepted = (r) => r.status >= 200 && r.status < 300 && !(r.data && r.data.success === false);
+  const errorOf = (r) => (r.data && r.data.error && (r.data.error.code || r.data.error.message)) || null;
+  const reportOk = accepted(sent);
 
   let sequence = v.marketingConsent ? 'not started' : 'not consented';
+  let tracked = null;
   if (reportOk && v.marketingConsent && saved.data.start_sequence) {
-    const tracked = await post(`${plunk}/v1/track`, auth, { event: SEQUENCE_EVENT, email: v.email, subscribed: true,
-                                                            data: contactData });
-    sequence = tracked.status === 200 ? 'started' : 'failed';
+    tracked = await post(`${plunk}/v1/track`, auth, { event: SEQUENCE_EVENT, email: v.email, subscribed: true,
+                                                      data: contactData });
+    sequence = accepted(tracked) ? 'started' : 'failed';
   } else if (v.marketingConsent && !saved.data.start_sequence) {
     sequence = 'not started: unsubscribed before';
   }
 
   waitUntil(post(aya, ayaHeaders, { action: 'delivery', data: {
     submission_id: submissionId, report_status: reportOk ? 'sent' : 'failed', sequence_status: sequence,
-    detail: { plunk_send_status: sent.status, plunk_error: reportOk ? null : (sent.data && sent.data.error && sent.data.error.code) || null },
+    detail: { plunk_send_status: sent.status, plunk_error: reportOk ? null : errorOf(sent),
+              ...(tracked ? { plunk_track_status: tracked.status, plunk_track_error: accepted(tracked) ? null : errorOf(tracked) } : {}) },
   } }));
 
   return reportOk ? json(200, { ok: true, message: MESSAGES.sent(v.email) }) : fail(502, 'unsent');
