@@ -31,6 +31,7 @@ The Plunk key stays in Cloudflare and is used only by the endpoint. The page nev
 | Name | Type | Production | Preview | Value |
 |---|---|---|---|---|
 | `PLUNK_API_KEY` | Secret | done (Serge) | needed for the preview test | Plunk secret key (`sk_…`) |
+| `PLUNK_PUBLIC_KEY` | Secret | needed | needed | Plunk public key (`pk_…`): Plunk accepts only this key for the sequence event |
 | `AYA_AUDIT_SECRET` | Secret | needed | needed | read on the Aya server (`/root/.aya_audit_secret`); never sent by message |
 
 Optional: `AUDIT_FROM` (default `hello@sergeabi.com`), `AYA_AUDIT_URL`, `PLUNK_API_URL` (default
