@@ -3,6 +3,14 @@
   if (!root) return;
   const sectionDescription = root.closest('.audit')?.querySelector('.audit-copy p');
   if (sectionDescription) sectionDescription.textContent = 'Six focused questions to help you see what is changing, what you are avoiding and what deserves your attention next.';
+  const footer = document.querySelector('footer');
+  if (footer && !footer.querySelector('[href="privacy.html"]')) {
+    const privacyLink = document.createElement('a');
+    privacyLink.className = 'footer-link';
+    privacyLink.href = 'privacy.html';
+    privacyLink.textContent = 'Privacy';
+    footer.insertBefore(privacyLink, footer.querySelector('.back-top'));
+  }
 
   const domains = [
     ['identity', 'Identity and purpose'],
@@ -126,7 +134,7 @@
       <h3 data-audit-heading tabindex="-1">Where should we send your report?</h3>
       <label for="audit-name">First name</label><input id="audit-name" name="firstName" autocomplete="given-name" required>
       <label for="audit-email">Email address</label><input id="audit-email" name="email" type="email" autocomplete="email" required>
-      <label class="audit-consent"><input name="deliveryConsent" type="checkbox" required><span>Send my personalized result and process my answers according to the Privacy Policy.</span></label>
+      <label class="audit-consent"><input name="deliveryConsent" type="checkbox" required><span>Send my personalized result and process my answers according to the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span></label>
       <label class="audit-consent"><input name="marketingConsent" type="checkbox"><span>Yes, I would also like thoughtful follow-up emails from Serge. I can unsubscribe at any time.</span></label>
       <input type="hidden" name="profile" value="${escapeHtml(result.profile)}"><input type="hidden" name="primaryArea" value="${escapeHtml(state.answers.q1)}">
       <div class="audit-result-actions"><button class="audit-primary" type="submit">Send my report</button><button class="audit-secondary" type="button" data-audit-action="close-email">Back to my result</button></div>
