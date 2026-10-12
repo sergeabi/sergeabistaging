@@ -11,6 +11,13 @@
     privacyLink.textContent = 'Privacy';
     footer.insertBefore(privacyLink, footer.querySelector('.back-top'));
   }
+  if (footer && !footer.querySelector('[href="terms.html"]')) {
+    const termsLink = document.createElement('a');
+    termsLink.className = 'footer-link';
+    termsLink.href = 'terms.html';
+    termsLink.textContent = 'Terms';
+    footer.insertBefore(termsLink, footer.querySelector('.back-top'));
+  }
 
   const domains = [
     ['identity', 'Identity and purpose'],
