@@ -15,7 +15,7 @@
   if(!Number.isInteger(level)||level<0||level>2)level=0;
   function applyZoom(next){
     level=next;
-    page.style.zoom=String(factors[level]);
+    page.style.zoom=String(factors[level]);page.style.width=(100/factors[level])+'%';
     badge.textContent=level+'x';
     button.setAttribute('aria-label',(labels[document.documentElement.lang]||labels.en)[level]);
     button.setAttribute('aria-pressed',String(level>0));
