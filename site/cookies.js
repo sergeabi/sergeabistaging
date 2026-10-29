@@ -76,7 +76,7 @@
     if (!visible) { root.innerHTML = ''; return; }
     root.innerHTML = `<section class="cookie-banner" aria-label="${t.title}">
       <h2>${t.title}</h2>
-      <p>${t.intro} <a href="privacy.html">${t.policy}</a></p>
+      <p>${t.intro} <a href="/privacy.html">${t.policy}</a></p>
       ${detailed ? `<div class="cookie-options">
         <div><strong>${t.essential}</strong><small>${t.essentialNote}</small></div><span aria-label="${t.essential}">✓</span>
         <label for="cookie-analytics"><strong>${t.analytics}</strong><small>${t.analyticsNote}</small></label>
