@@ -73,10 +73,10 @@
     const localize = source => {
       const trimmed = source.trim();
       if (!trimmed) return source;
-      const match = /^Question (\\d+) of (\\d+)$/.exec(trimmed);
+      const match = /^Question (\d+) of (\d+)$/.exec(trimmed);
       let translated = match ? (questionGrammar[lang] || questionGrammar.en)(match[1], match[2]) : dict[trimmed];
       if (!translated) {
-        const dimension = Object.keys(dict).find(english => trimmed.startsWith(english + ' ') && /\\d+%$/.test(trimmed));
+        const dimension = Object.keys(dict).find(english => trimmed.startsWith(english + ' ') && /\d+%$/.test(trimmed));
         if (dimension) translated = dict[dimension] + trimmed.slice(dimension.length);
       }
       if (!translated) return source;
