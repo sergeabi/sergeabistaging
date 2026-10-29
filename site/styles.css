@@ -209,6 +209,22 @@ main{max-width:100%;overflow-x:clip}
  .testimonial-heading{padding-right:58px}.testimonial-heading:after{font-size:42px}
  .consciousness .scene:before,.consciousness .scene:nth-child(2):before{right:0;left:auto;font-size:72px}
 }
+
+/* Geometric mandala system */
+.mandala{display:block;overflow:visible;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.mandala .mandala-node{fill:var(--gold);stroke:none}
+.manifesto-copy>.mandala-sun{width:70px;height:70px;margin-top:4px;opacity:.95}
+.testimonial-heading:after{content:none}
+.testimonial-heading>.mandala-lotus{position:absolute;right:1%;top:50%;width:clamp(72px,8vw,126px);height:auto;transform:translateY(-50%);opacity:.62}
+.consciousness-heading>.mandala-orbit{width:62px;height:62px;margin:0 auto 24px;opacity:.72}
+.coaching-intro{position:relative;padding-right:clamp(90px,13vw,170px)}
+.coaching-intro>.mandala-compass{position:absolute;right:0;top:0;width:clamp(78px,9vw,124px);height:auto;opacity:.5}
+@media(max-width:760px){
+ .manifesto-copy>.mandala-sun{width:40px;height:40px}
+ .testimonial-heading>.mandala-lotus{width:58px}
+ .consciousness-heading>.mandala-orbit{width:52px;height:52px;margin-bottom:20px}
+ .coaching-intro{padding-right:0}.coaching-intro>.mandala-compass{position:static;width:58px;margin:0 0 22px;opacity:.62}
+}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
