@@ -1,8 +1,6 @@
 (() => {
   const root = document.getElementById('audit-calculator');
   if (!root) return;
-  const sectionDescription = root.closest('.audit')?.querySelector('.audit-copy p');
-  if (sectionDescription) sectionDescription.textContent = 'Six questions. About two minutes. A clearer view of where you are and what may need to change next.';
   const footer = document.querySelector('footer');
   if (footer && !footer.querySelector('[href="privacy.html"]')) {
     const privacyLink = document.createElement('a');
@@ -59,6 +57,40 @@
   };
 
   let state = { phase: 'intro', step: 0, answers: {}, emailOpen: false };
+  let suppressFocus = false;
+  const questionGrammar = {
+    en: (n, total) => `Question ${n} of ${total}`,
+    fr: (n, total) => `Question ${n} sur ${total}`,
+    es: (n, total) => `Pregunta ${n} de ${total}`,
+    ar: (n, total) => `السؤال ${n} من ${total}`
+  };
+  function currentDictionary() {
+    return window.sergeAuditDictionaries?.[document.documentElement.lang] || {};
+  }
+  function translateAudit() {
+    const dict = currentDictionary();
+    const lang = document.documentElement.lang;
+    const localize = source => {
+      const trimmed = source.trim();
+      if (!trimmed) return source;
+      const match = /^Question (\d+) of (\d+)$/.exec(trimmed);
+      let translated = match ? (questionGrammar[lang] || questionGrammar.en)(match[1], match[2]) : dict[trimmed];
+      if (!translated) {
+        const dimension = Object.keys(dict).find(english => trimmed.startsWith(english + ' ') && /\d+%$/.test(trimmed));
+        if (dimension) translated = dict[dimension] + trimmed.slice(dimension.length);
+      }
+      if (!translated) return source;
+      return source.replace(trimmed, translated);
+    };
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) walker.currentNode.nodeValue = localize(walker.currentNode.nodeValue);
+    root.querySelectorAll('[aria-label],[title],[placeholder]').forEach(el => {
+      ['aria-label', 'title', 'placeholder'].forEach(attr => {
+        if (el.hasAttribute(attr)) el.setAttribute(attr, localize(el.getAttribute(attr)));
+      });
+    });
+  }
+
   const score = value => (Number(value) - 1) * 25;
   const reverse = value => 100 - score(value);
   const average = values => Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
@@ -76,7 +108,7 @@
   }
 
   function focusHeading() {
-    requestAnimationFrame(() => root.querySelector('[data-audit-heading]')?.focus({ preventScroll: true }));
+    if (!suppressFocus) requestAnimationFrame(() => root.querySelector('[data-audit-heading]')?.focus({ preventScroll: true }));
   }
 
   function renderIntro() {
@@ -141,7 +173,7 @@
       <div class="audit-result-actions"><button class="audit-primary" type="submit">Send my report</button><button class="audit-secondary" type="button" data-audit-action="close-email">Back to my result</button></div>
       <p class="form-status" id="audit-form-status" role="status" aria-live="polite"></p>
     </form>`;
-    state.formOpenedAt = Date.now();
+    state.formOpenedAt ||= Date.now();
     focusHeading();
   }
 
@@ -149,7 +181,36 @@
     if (state.phase === 'questions') renderQuestion();
     else if (state.phase === 'result') renderResult();
     else renderIntro();
+    translateAudit();
   }
+
+  // app.js emits this event whenever EN, FR, ES or AR is selected.
+  // Keep the questionnaire step and a partially completed contact form intact.
+  document.addEventListener('serge:languagechange', () => {
+    const form = root.querySelector('#audit-result-form');
+    const draft = form ? {
+      name: form.elements.firstName?.value || '',
+      email: form.elements.email?.value || '',
+      delivery: Boolean(form.elements.deliveryConsent?.checked),
+      marketing: Boolean(form.elements.marketingConsent?.checked),
+      website: form.elements.website?.value || '',
+      status: form.querySelector('#audit-form-status')?.textContent || ''
+    } : null;
+    suppressFocus = true;
+    render();
+    suppressFocus = false;
+    if (draft) {
+      const next = root.querySelector('#audit-result-form');
+      if (!next) return;
+      next.elements.firstName.value = draft.name;
+      next.elements.email.value = draft.email;
+      next.elements.deliveryConsent.checked = draft.delivery;
+      next.elements.marketingConsent.checked = draft.marketing;
+      next.elements.website.value = draft.website;
+      if (draft.status) next.querySelector('#audit-form-status').textContent =
+        currentDictionary()['We could not complete the request. Please try again later.'] || draft.status;
+    }
+  });
 
   root.addEventListener('click', event => {
     const answer = event.target.closest('[data-audit-answer]');
@@ -184,7 +245,7 @@
     button.disabled = true;
     form.setAttribute('aria-busy', 'true');
     status.classList.remove('is-error', 'is-success');
-    status.textContent = 'Sending your report…';
+    status.textContent = currentDictionary()['Sending your report…'] || 'Sending your report…';
     let message = 'We could not send your report just now. Please check your connection and try again.';
     let sent = false;
     try {
@@ -206,7 +267,10 @@
       if (data && data.message) message = data.message;
       sent = res.ok && data.ok === true;
     } catch (error) { /* network error: the message above */ }
-    status.textContent = message;
+    const dict = currentDictionary();
+    status.textContent = document.documentElement.lang === 'en'
+      ? message
+      : (dict[sent ? 'Your report request was received. Please check your inbox.' : 'We could not complete the request. Please try again later.'] || message);
     status.classList.add(sent ? 'is-success' : 'is-error');
     form.removeAttribute('aria-busy');
     if (sent) {
