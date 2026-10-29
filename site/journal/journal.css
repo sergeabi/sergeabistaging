@@ -1,6 +1,6 @@
 /* Field Notes — editorial journal, designed to complement the main site. */
 .journal-page{color:var(--text);background:var(--bg);font-family:var(--body);overflow-x:hidden}
-.journal-page a{text-decoration:none}
+.journal-page :where(main,.journal-header,.journal-footer) a{text-decoration:none}
 .journal-wrap{padding-left:clamp(24px,5.4vw,100px);padding-right:clamp(24px,5.4vw,100px)}
 .journal-header{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:96px;padding:20px clamp(24px,5.4vw,100px);background:#10130f;border-bottom:1px solid var(--line)}
 .journal-brand{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:.075em;white-space:nowrap}
@@ -14,7 +14,7 @@
 .journal-hero-inner{width:min(1100px,100%);padding:105px clamp(24px,5.4vw,100px) 120px}
 .journal-eyebrow,.journal-kicker,.journal-theme-number{color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;line-height:1.65}
 .journal-hero h1{font-family:var(--sans);font-size:clamp(75px,11vw,166px);line-height:.95;letter-spacing:-.085em;margin:34px 0 28px}
-.journal-hero h1 em,.journal-page h2 em{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--gold)}
+.journal-hero h1 em,.journal-page main h2 em{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--gold)}
 .journal-lead{font-size:clamp(17px,1.6vw,23px);line-height:1.6;color:#e2e5d7;max-width:670px}
 .journal-hero-actions,.journal-next-actions{display:flex;gap:25px;align-items:center;flex-wrap:wrap;margin-top:34px}
 .journal-link-primary{display:inline-flex;justify-content:space-between;align-items:center;gap:22px;border:1px solid #c6a86e8c;padding:13px 17px;color:var(--gold);font-size:13px;min-height:50px}
@@ -23,7 +23,7 @@
 .journal-link-quiet:hover{color:var(--gold);border-color:var(--gold)}
 .journal-hero-side{position:absolute;right:clamp(25px,5vw,75px);bottom:30px;font-size:10px;letter-spacing:.2em;color:#c0c6b3}
 .journal-intro{padding-top:clamp(75px,9vw,145px);padding-bottom:clamp(75px,9vw,145px);display:grid;grid-template-columns:minmax(190px,.65fr) minmax(0,2fr);gap:clamp(35px,7vw,120px)}
-.journal-page h2{font-size:clamp(44px,5.5vw,86px);letter-spacing:-.058em;line-height:1.07;margin:0 0 29px}
+.journal-page main h2{font-size:clamp(44px,5.5vw,86px);letter-spacing:-.058em;line-height:1.07;margin:0 0 29px}
 .journal-intro-copy p{font-size:clamp(17px,1.5vw,20px);color:#bec4b7;line-height:1.8;max-width:850px}
 .journal-intro-copy p+p{margin-top:22px}
 .journal-themes{background:var(--surface);padding-top:95px;padding-bottom:125px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -155,3 +155,6 @@ body.journal-page:is([data-reading-level="1"],[data-reading-level="2"]) :is(.jou
 .journal-article-opening{font-size:20px!important}
 }
 @media(prefers-reduced-motion:reduce){.journal-post-image img{transition:none}}
+
+/* Keep the homepage cookie banner as the shared visual default on the journal and every essay. */
+.journal-article-cover figcaption a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
