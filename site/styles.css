@@ -210,21 +210,22 @@ main{max-width:100%;overflow-x:clip}
 /* Book feature and simplified decorative layout */
 .hero-bottom{justify-content:center}
 .manifesto-copy{grid-template-columns:1fr!important}
-.book{background:#0b0f0b;border-top:1px solid var(--line)}
-.book-layout{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:clamp(45px,8vw,120px);align-items:center;margin-top:clamp(40px,6vw,80px)}
-.book-art{aspect-ratio:1;max-width:560px;border:1px solid var(--line);background:#eef7f8}
-.book-art img{object-fit:cover}
-.book-copy{max-width:680px}.book-copy>.micro{color:var(--gold)}
+.book{background:linear-gradient(135deg,#1a2319 0%,#141b13 58%,#10150f 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.book-layout{display:grid;grid-template-columns:1fr;margin-top:clamp(40px,6vw,80px)}
+.book-copy{max-width:850px}.book-copy>.micro{color:var(--gold)}
 .book-copy h2{font-size:clamp(90px,12vw,190px);line-height:.85;margin:20px 0 28px}.book-copy h2 em{color:var(--text)}
 .book-copy h3{font-size:clamp(32px,4vw,62px);line-height:1.08;letter-spacing:-.05em}
 .book-subtitle{margin-top:18px;color:var(--gold);font-family:var(--serif);font-size:clamp(20px,2vw,29px);font-style:italic;line-height:1.35}
 .book-copy>p:not(.book-subtitle):not(.book-note){max-width:590px;margin-top:26px;color:var(--muted);font-size:16px}
 .book-copy .line-link{margin-top:28px}.book-note{margin-top:12px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:760px){
- .book-layout{grid-template-columns:1fr;gap:35px;margin-top:35px}.book-art{max-width:100%}
+ .book-layout{margin-top:35px}
  .book-copy h2{font-size:30vw;margin:12px 0 24px}.book-copy h3{font-size:10.5vw}
  .book-copy>p:not(.book-subtitle):not(.book-note){font-size:17px}
 }
+.mobile-be{display:none}
+.notebook-star{display:none!important}
+@media(max-width:760px){.desktop-be{display:none}.mobile-be{display:inline}}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
