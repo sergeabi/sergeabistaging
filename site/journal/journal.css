@@ -101,3 +101,9 @@
 .journal-category-nav a:hover,.journal-category-nav a:focus-visible{color:var(--gold);border-color:var(--gold)}
 .journal-theme{scroll-margin-top:28px}
 @media(max-width:760px){.journal-category-nav{margin-top:24px}.journal-category-nav a{font-size:12px;padding:9px 12px}}
+
+/* Shared accessible floating controls on journal and future articles. */
+.journal-page .aya-chat-widget,.journal-page .text-magnifier{z-index:60}
+body.journal-page:is([data-reading-level="1"],[data-reading-level="2"]) :is(.journal-lead,.journal-intro-copy p,.journal-theme p,.journal-next p,.journal-article-deck,.journal-article-body p,.journal-article-body li,.journal-article-cta p){
+  font-size:calc(18px * var(--reading-factor))!important;line-height:1.7
+}
