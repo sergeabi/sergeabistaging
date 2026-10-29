@@ -307,7 +307,7 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
   .connect footer .cookie-preferences-link{font-size:12px}
 }
 
-/* Wide desktop consent bar; preserve the compact floating mobile card. */
+/* Full-width consent bar on every screen; mobile keeps its stacked controls. */
 @media(min-width:761px){
   #cookie-consent-root{left:0;right:0;bottom:0;width:100%;max-width:none}
   .cookie-banner{
@@ -320,4 +320,25 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
   .cookie-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);column-gap:clamp(24px,4vw,80px);align-items:center}
   .cookie-banner h2,.cookie-banner p,.cookie-options{grid-column:1}
   .cookie-actions{grid-column:2;grid-row:1 / span 3;margin-top:0}
+}
+
+/* Mobile cookie banner uses the same edge-to-edge bottom bar as desktop. */
+@media(max-width:760px){
+  #cookie-consent-root{
+    left:0;right:0;bottom:0;width:100%;max-width:none;
+  }
+  .cookie-banner{
+    width:100%;max-height:calc(100dvh - 12px);
+    border-radius:0;border-left:0;border-right:0;border-bottom:0;
+    padding:18px clamp(18px,5vw,32px) calc(18px + env(safe-area-inset-bottom));
+  }
+  .cookie-actions{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .cookie-actions button{
+    flex:1 1 calc(50% - 5px);
+  }
+  .cookie-actions .cookie-quiet{
+    flex:1 1 100%;
+  }
 }
