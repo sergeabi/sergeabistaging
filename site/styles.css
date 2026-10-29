@@ -281,7 +281,7 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
 }
 /* Accessible opt-in control. Accepting and declining receive equal visual prominence. */
 #cookie-consent-root{position:fixed;z-index:120;left:clamp(12px,3vw,34px);bottom:clamp(84px,8vh,110px);max-width:min(620px,calc(100vw - 24px));pointer-events:none}
-.cookie-banner{pointer-events:auto;max-height:min(78dvh,720px);overflow:auto;padding:22px 24px;border:1px solid #c6a86e85;border-radius:16px;background:#121913;color:var(--text);box-shadow:0 16px 56px #000a;font-family:var(--body);text-align:start}
+.cookie-banner{pointer-events:auto;max-height:min(78dvh,720px);overflow:auto;padding:22px 24px;border:1px solid #c6a86e85;border-radius:16px;background:rgba(18,25,19,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--text);box-shadow:0 16px 56px #000a;font-family:var(--body);text-align:start}
 .cookie-banner h2{margin:0 0 8px;font-family:var(--sans);font-size:21px;line-height:1.25;font-weight:600;letter-spacing:-.025em}
 .cookie-banner p{margin:0;color:#d3d9cc;font-size:14px;line-height:1.55}
 .cookie-banner a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
@@ -305,4 +305,19 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
   .cookie-actions{gap:8px;margin-top:12px}.cookie-actions button{flex:1 1 110px;min-height:44px;font-size:12px}
   .cookie-actions .cookie-quiet{flex:1 1 100%;min-height:34px}
   .connect footer .cookie-preferences-link{font-size:12px}
+}
+
+/* Wide desktop consent bar; preserve the compact floating mobile card. */
+@media(min-width:761px){
+  #cookie-consent-root{left:0;right:0;bottom:0;width:100%;max-width:none}
+  .cookie-banner{
+    width:100%;max-height:min(75dvh,720px);
+    border-radius:0;border-left:0;border-right:0;border-bottom:0;
+    padding:22px clamp(24px,5vw,96px);
+  }
+}
+@media(min-width:1100px){
+  .cookie-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);column-gap:clamp(24px,4vw,80px);align-items:center}
+  .cookie-banner h2,.cookie-banner p,.cookie-options{grid-column:1}
+  .cookie-actions{grid-column:2;grid-row:1 / span 3;margin-top:0}
 }
