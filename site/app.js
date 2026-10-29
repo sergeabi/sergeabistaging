@@ -66,9 +66,9 @@ es:[["THE BOOK","EL LIBRO"],["COMING SOON","PRÓXIMAMENTE"],["Footprints Beyond 
 ar:[["THE BOOK","الكتاب"],["COMING SOON","قريباً"],["Footprints Beyond Borders","آثار تتجاوز الحدود"],["A Plus Two-Year Odyssey — From Consulting to Backpacking.","رحلة امتدت لأكثر من عامين — من الاستشارات إلى السفر بحقيبة الظهر."],["From Paris boardrooms to a backpack and the open road, 109 follows the journey that changed how I see work, freedom and myself. It is a story of leaving the expected path, meeting the world with curiosity and discovering what remains when an old identity falls away.","من قاعات الاجتماعات في باريس إلى حقيبة ظهر والطريق المفتوح، يروي 109 الرحلة التي غيّرت نظرتي إلى العمل والحرية وذاتي. إنها قصة ترك الطريق المتوقع ولقاء العالم بفضول واكتشاف ما يبقى حين تتلاشى هوية قديمة."],["Pre-order a free copy","اطلب نسخة مجانية مسبقاً"],["Amazon link coming soon.","رابط أمازون قريباً."],["109 — Footprints Beyond Borders book logo","شعار كتاب 109 — آثار تتجاوز الحدود"]]
 };
 const revisionThreePairs={
-fr:[["What if life could","Et si la vie pouvait"],["be","être"],["Privacy Policy","Politique de confidentialité"]],
-es:[["What if life could","¿Y si la vida pudiera"],["be","ser"],["Privacy Policy","Política de privacidad"]],
-ar:[["What if life could","ماذا لو كان بإمكان الحياة أن"],["be","تكون"],["Privacy Policy","سياسة الخصوصية"]]
+fr:[["What if life could","Et si la vie pouvait"],["be","être"],["Privacy Policy","Politique de confidentialité"],["Read the journal","Lire le journal"]],
+es:[["What if life could","¿Y si la vida pudiera"],["be","ser"],["Privacy Policy","Política de privacidad"],["Read the journal","Leer el diario"]],
+ar:[["What if life could","ماذا لو كان بإمكان الحياة أن"],["be","تكون"],["Privacy Policy","سياسة الخصوصية"],["Read the journal","اقرأ المدوّنة"]]
 };
 const dictionaries=Object.fromEntries(Object.entries(pairs).map(([lang,list])=>[lang,new Map([...list,...(supplementalPairs[lang]||[]),...(extraPairs[lang]||[]),...(revisionPairs[lang]||[]),...(revisionTwoPairs[lang]||[]),...(bookPairs[lang]||[]),...(revisionThreePairs[lang]||[])])]));
 const metadataTranslations={
