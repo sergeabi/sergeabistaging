@@ -2,7 +2,7 @@
   const root = document.getElementById('audit-calculator');
   if (!root) return;
   const sectionDescription = root.closest('.audit')?.querySelector('.audit-copy p');
-  if (sectionDescription) sectionDescription.textContent = 'Six focused questions to help you see what is changing, what you are avoiding and what deserves your attention next.';
+  if (sectionDescription) sectionDescription.textContent = 'Six questions. About two minutes. A clearer view of where you are and what may need to change next.';
   const footer = document.querySelector('footer');
   if (footer && !footer.querySelector('[href="privacy.html"]')) {
     const privacyLink = document.createElement('a');
