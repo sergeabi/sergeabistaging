@@ -159,6 +159,29 @@ main{max-width:100%;overflow-x:clip}
 
 /* RTL alignment: keep reading order and interactive controls consistent. */
 .rtl #mobile-nav,.rtl .audit-contact,.rtl .testimonial,.rtl .legal-main{text-align:right}
+
+/* Pre-launch editorial polish */
+.manifesto-copy strong{font-weight:650;color:var(--text)}
+.journey-copy strong{font-weight:650;color:var(--text)}
+.journey-pullquote{font-family:var(--serif);font-size:clamp(24px,2.1vw,34px)!important;line-height:1.3!important;color:var(--gold)!important}
+.journey-questions{font-size:clamp(19px,1.6vw,25px)!important;line-height:1.5!important;color:var(--text)!important}
+.journey-wakeup{font-size:clamp(20px,1.7vw,27px)!important;color:var(--text)!important}
+.journey-transformation-steps>h3{margin:0;font-size:clamp(22px,2vw,30px);line-height:1.3;letter-spacing:-.025em;color:var(--text)}
+.journey-steps li{padding-left:.3em}.journey-steps strong{color:var(--gold);font-weight:600}.journey-steps span{color:var(--muted)}
+.testimonial-heading{margin:0 0 clamp(32px,4vw,55px)}
+.testimonial-heading h2{font-size:clamp(42px,5vw,76px)}
+.testimonial-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.testimonial{padding:34px clamp(28px,4vw,55px);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.testimonial:nth-child(odd){padding-left:0;border-left:0}.testimonial:nth-child(-n+2){border-top:0;padding-top:0}
+.testimonial blockquote{max-width:650px}
+.offer-card .line-link{margin-top:auto;padding-top:18px}
+.scene figure>img{object-position:center}.scene:first-child figure>img{object-position:center 52%}.scene:nth-child(2) figure>img{object-position:center 48%}
+@media(max-width:760px){
+ .testimonial-heading{margin-bottom:24px}.testimonial-heading h2{font-size:11vw}
+ .testimonial-list{grid-template-columns:1fr}.testimonial,.testimonial:nth-child(odd),.testimonial:nth-child(-n+2){padding:26px 0;border-left:0;border-top:1px solid var(--line)}
+ .testimonial:first-child{padding-top:8px;border-top:0}
+ .journey-transformation-steps>h3{font-size:22px}
+}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
