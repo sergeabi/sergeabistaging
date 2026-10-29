@@ -94,3 +94,10 @@
 .journal-article-cover{margin-bottom:42px}
 .journal-article-cta{padding-block:65px}
 }
+
+/* Category-navigation links jump to editorial topics without fake article results. */
+.journal-category-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:35px}
+.journal-category-nav a{font-size:12px;line-height:1.45;border:1px solid #c6a86e4f;border-radius:999px;color:#d6d9ce;padding:11px 16px}
+.journal-category-nav a:hover,.journal-category-nav a:focus-visible{color:var(--gold);border-color:var(--gold)}
+.journal-theme{scroll-margin-top:28px}
+@media(max-width:760px){.journal-category-nav{margin-top:24px}.journal-category-nav a{font-size:12px;padding:9px 12px}}
