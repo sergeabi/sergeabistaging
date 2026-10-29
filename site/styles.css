@@ -91,8 +91,11 @@ body:after{content:'';position:fixed;inset:0;z-index:25;pointer-events:none;back
 .journey-layout{align-items:start;column-gap:clamp(75px,11vw,190px);row-gap:24px}
 .portrait-composition{grid-column:1;grid-row:1/span 2;align-self:start}
 .journey-copy{grid-column:2;grid-row:1;align-self:start}
-.journey-milestones{grid-column:2;grid-row:2;align-self:end;margin-top:0}
-.journey-transformation{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(75px,11vw,190px);align-items:start;border-top:1px solid var(--line);padding-top:clamp(36px,4vw,64px);margin-top:clamp(28px,3vw,48px)}
+.journey-milestones{grid-column:1/-1;grid-row:3;align-self:stretch;position:relative;left:50%;transform:translateX(-50%);width:100vw;max-width:100vw;margin-top:clamp(22px,3vw,48px);padding:28px max(var(--gutter),calc((100vw - 1550px)/2)) 0;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,72px)}
+.journey-milestones>div{display:block;min-width:0}
+.journey-milestones span{width:auto}
+.journey-milestones p{margin-top:9px}
+.journey-transformation{grid-column:1/-1;grid-row:4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(75px,11vw,190px);align-items:start;border-top:1px solid var(--line);padding-top:clamp(36px,4vw,64px);margin-top:clamp(28px,3vw,48px)}
 .journey-transformation>.journey-manifesto-cta{margin:0;max-width:620px}
 .journey-transformation-steps{width:100%;max-width:680px;justify-self:end}
 .journey-transformation-steps>p{margin:0}
@@ -229,3 +232,9 @@ main{max-width:100%;overflow-x:clip}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
+
+/* Final pre-launch mobile WhatsApp label: keep both icon and invitation visible, including short landscape viewports. */
+@media(max-width:760px){
+  .aya-chat-widget{width:auto;height:auto;max-width:calc(100vw - 92px);min-height:48px;padding:12px 15px;justify-content:flex-start}
+  .aya-chat-widget span{position:static;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;white-space:nowrap;font-size:12px}
+}
