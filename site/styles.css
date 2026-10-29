@@ -200,30 +200,30 @@ main{max-width:100%;overflow-x:clip}
 /* Editorial accents for text-led sections */
 .manifesto-main h2 em{color:var(--gold)}
 .journey-transformation-steps>h3 span{color:var(--gold)}
-.testimonial-heading{position:relative;padding-right:clamp(70px,9vw,145px)}
-.testimonial-heading:after{content:'✳';position:absolute;right:1%;top:50%;transform:translateY(-50%);color:var(--gold);font-size:clamp(46px,6vw,92px);font-weight:300;line-height:1}
 .consciousness .scene{position:relative;overflow:hidden}
 .consciousness .scene:before{content:'01';position:absolute;right:0;top:18px;color:#c6a86e1f;font-family:var(--serif);font-size:clamp(72px,9vw,138px);font-style:italic;line-height:1;pointer-events:none}
 .consciousness .scene:nth-child(2):before{content:'02';right:auto;left:0}
 @media(max-width:760px){
- .testimonial-heading{padding-right:58px}.testimonial-heading:after{font-size:42px}
  .consciousness .scene:before,.consciousness .scene:nth-child(2):before{right:0;left:auto;font-size:72px}
 }
 
-/* Geometric mandala system */
-.mandala{display:block;overflow:visible;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.mandala .mandala-node{fill:var(--gold);stroke:none}
-.manifesto-copy>.mandala-sun{width:70px;height:70px;margin-top:4px;opacity:.95}
-.testimonial-heading:after{content:none}
-.testimonial-heading>.mandala-lotus{position:absolute;right:1%;top:50%;width:clamp(72px,8vw,126px);height:auto;transform:translateY(-50%);opacity:.62}
-.consciousness-heading>.mandala-orbit{width:62px;height:62px;margin:0 auto 24px;opacity:.72}
-.coaching-intro{position:relative;padding-right:clamp(90px,13vw,170px)}
-.coaching-intro>.mandala-compass{position:absolute;right:0;top:0;width:clamp(78px,9vw,124px);height:auto;opacity:.5}
+/* Book feature and simplified decorative layout */
+.hero-bottom{justify-content:center}
+.manifesto-copy{grid-template-columns:1fr!important}
+.book{background:#0b0f0b;border-top:1px solid var(--line)}
+.book-layout{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:clamp(45px,8vw,120px);align-items:center;margin-top:clamp(40px,6vw,80px)}
+.book-art{aspect-ratio:1;max-width:560px;border:1px solid var(--line);background:#eef7f8}
+.book-art img{object-fit:cover}
+.book-copy{max-width:680px}.book-copy>.micro{color:var(--gold)}
+.book-copy h2{font-size:clamp(90px,12vw,190px);line-height:.85;margin:20px 0 28px}.book-copy h2 em{color:var(--text)}
+.book-copy h3{font-size:clamp(32px,4vw,62px);line-height:1.08;letter-spacing:-.05em}
+.book-subtitle{margin-top:18px;color:var(--gold);font-family:var(--serif);font-size:clamp(20px,2vw,29px);font-style:italic;line-height:1.35}
+.book-copy>p:not(.book-subtitle):not(.book-note){max-width:590px;margin-top:26px;color:var(--muted);font-size:16px}
+.book-copy .line-link{margin-top:28px}.book-note{margin-top:12px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:760px){
- .manifesto-copy>.mandala-sun{width:40px;height:40px}
- .testimonial-heading>.mandala-lotus{width:58px}
- .consciousness-heading>.mandala-orbit{width:52px;height:52px;margin-bottom:20px}
- .coaching-intro{padding-right:0}.coaching-intro>.mandala-compass{position:static;width:58px;margin:0 0 22px;opacity:.62}
+ .book-layout{grid-template-columns:1fr;gap:35px;margin-top:35px}.book-art{max-width:100%}
+ .book-copy h2{font-size:30vw;margin:12px 0 24px}.book-copy h3{font-size:10.5vw}
+ .book-copy>p:not(.book-subtitle):not(.book-note){font-size:17px}
 }
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
