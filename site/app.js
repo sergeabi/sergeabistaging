@@ -55,7 +55,12 @@ fr:[["My mission is to serve through higher awareness and positive action — he
 es:[["My mission is to serve through higher awareness and positive action — helping people reconnect with themselves and turn that clarity into a roadmap.","Mi misión es servir desde una mayor conciencia y una acción positiva, ayudando a las personas a reconectar consigo mismas y convertir esa claridad en una hoja de ruta."],["A few","Unas"],["words","palabras"],["from the heart...","desde el corazón..."],["endless possibilities to create your roadmap and plan","infinitas posibilidades para crear tu hoja de ruta y planificar"],["your evolution.","tu evolución."]],
 ar:[["My mission is to serve through higher awareness and positive action — helping people reconnect with themselves and turn that clarity into a roadmap.","رسالتي هي الخدمة من خلال وعي أعمق وعمل إيجابي، لمساعدة الناس على إعادة الاتصال بذواتهم وتحويل هذا الوضوح إلى خارطة طريق."],["A few","بضع"],["words","كلمات"],["from the heart...","من القلب..."],["endless possibilities to create your roadmap and plan","إمكانات لا تنتهي لصنع خارطة طريقك والتخطيط"],["your evolution.","لتطورك."]]
 };
-const dictionaries=Object.fromEntries(Object.entries(pairs).map(([lang,list])=>[lang,new Map([...list,...(supplementalPairs[lang]||[]),...(extraPairs[lang]||[]),...(revisionPairs[lang]||[])])]));
+const revisionTwoPairs={
+fr:[["What if life could be","Et si la vie pouvait être"],["more","plus"],["I had a wake-up call!","J’ai eu un électrochoc !"],["Are you ready to take the","Êtes-vous prêt à faire le"],["first step?","premier pas ?"]],
+es:[["What if life could be","¿Y si la vida pudiera ser"],["more","más"],["I had a wake-up call!","¡Tuve una llamada de atención!"],["Are you ready to take the","¿Estás listo para dar el"],["first step?","primer paso?"]],
+ar:[["What if life could be","ماذا لو كانت الحياة"],["more","أكثر"],["I had a wake-up call!","كانت لدي لحظة صحوة!"],["Are you ready to take the","هل أنت مستعد لاتخاذ"],["first step?","الخطوة الأولى؟"]]
+};
+const dictionaries=Object.fromEntries(Object.entries(pairs).map(([lang,list])=>[lang,new Map([...list,...(supplementalPairs[lang]||[]),...(extraPairs[lang]||[]),...(revisionPairs[lang]||[]),...(revisionTwoPairs[lang]||[])])]));
 const metadataTranslations={
 fr:{"The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide.":"L’univers en mouvement de Serge Abi. Entrepreneur, explorateur, créateur et guide spirituel."},
 es:{"The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide.":"El universo en evolución de Serge Abi. Emprendedor, explorador, creador y guía espiritual."},

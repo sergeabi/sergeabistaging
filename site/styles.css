@@ -196,6 +196,19 @@ main{max-width:100%;overflow-x:clip}
  .consciousness .scene:nth-child(2) .scene-copy{justify-self:start}
  .keep-together{white-space:normal}
 }
+
+/* Editorial accents for text-led sections */
+.manifesto-main h2 em{color:var(--gold)}
+.journey-transformation-steps>h3 span{color:var(--gold)}
+.testimonial-heading{position:relative;padding-right:clamp(70px,9vw,145px)}
+.testimonial-heading:after{content:'✳';position:absolute;right:1%;top:50%;transform:translateY(-50%);color:var(--gold);font-size:clamp(46px,6vw,92px);font-weight:300;line-height:1}
+.consciousness .scene{position:relative;overflow:hidden}
+.consciousness .scene:before{content:'01';position:absolute;right:0;top:18px;color:#c6a86e1f;font-family:var(--serif);font-size:clamp(72px,9vw,138px);font-style:italic;line-height:1;pointer-events:none}
+.consciousness .scene:nth-child(2):before{content:'02';right:auto;left:0}
+@media(max-width:760px){
+ .testimonial-heading{padding-right:58px}.testimonial-heading:after{font-size:42px}
+ .consciousness .scene:before,.consciousness .scene:nth-child(2):before{right:0;left:auto;font-size:72px}
+}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
