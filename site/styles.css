@@ -229,3 +229,9 @@ main{max-width:100%;overflow-x:clip}
 .rtl .audit-controls,.rtl .audit-result-actions{direction:rtl}
 .rtl .legal-main ul{padding-left:0;padding-right:1.35em}
 .rtl .legal-main th,.rtl .legal-main td{text-align:right}
+
+/* Final pre-launch mobile WhatsApp label: keep both icon and invitation visible, including short landscape viewports. */
+@media(max-width:760px){
+  .aya-chat-widget{width:auto;height:auto;max-width:calc(100vw - 92px);min-height:48px;padding:12px 15px;justify-content:flex-start}
+  .aya-chat-widget span{position:static;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;white-space:nowrap;font-size:12px}
+}
