@@ -72,9 +72,22 @@ ar:[["What if life could","ماذا لو كان بإمكان الحياة أن"]
 };
 const dictionaries=Object.fromEntries(Object.entries(pairs).map(([lang,list])=>[lang,new Map([...list,...(supplementalPairs[lang]||[]),...(extraPairs[lang]||[]),...(revisionPairs[lang]||[]),...(revisionTwoPairs[lang]||[]),...(bookPairs[lang]||[]),...(revisionThreePairs[lang]||[])])]));
 const metadataTranslations={
-fr:{"The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide.":"L’univers en mouvement de Serge Abi. Entrepreneur, explorateur, créateur et guide spirituel."},
-es:{"The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide.":"El universo en evolución de Serge Abi. Emprendedor, explorador, creador y guía espiritual."},
-ar:{"The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide.":"عالم سيرج أبي المتطور. رائد أعمال ومستكشف ومبدع ومرشد روحي."}
+  "en": {
+    "title": "Life & Freedom Coaching | Serge Abi",
+    "description": "At a crossroads in life or business? Explore private coaching with Serge Abi for greater clarity, meaningful change and freedom. Try the free Crossroads Audit."
+  },
+  "fr": {
+    "title": "Coaching de vie et liberté | Serge Abi",
+    "description": "À un tournant personnel ou professionnel ? Découvrez l’accompagnement individuel de Serge Abi pour plus de clarté, de sens et de liberté. Faites le bilan Crossroads gratuit."
+  },
+  "es": {
+    "title": "Coaching de vida y libertad | Serge Abi",
+    "description": "¿En un punto de inflexión personal o profesional? Descubre el acompañamiento de Serge Abi para ganar claridad y libertad. Empieza con la evaluación Crossroads gratuita."
+  },
+  "ar": {
+    "title": "إرشاد للحياة والحرية | سيرج أبي",
+    "description": "هل تمرّ بمنعطف في حياتك أو عملك؟ اكتشف جلسات الإرشاد الفردي مع سيرج أبي من أجل وضوح أكبر وتغيير هادف وحرية أوسع. ابدأ بتقييم مفترق الطرق المجاني."
+  }
 };
 let activeLanguage='en';
 const languageButtons=[...document.querySelectorAll('[data-language]')];
@@ -83,6 +96,6 @@ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
 while(walker.nextNode()){const node=walker.currentNode;if(node.nodeValue.trim())originalTextNodes.push({node,source:node.nodeValue});}
 const originalAttributes=[];
 document.querySelectorAll('[alt],[aria-label],[title]').forEach(el=>['alt','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr))originalAttributes.push({el,attr,source:el.getAttribute(attr)});}));
-function applyLanguage(lang){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.[sourceDescription]||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.["The unfolding world of Serge Abi. Entrepreneur, explorer, creator and spiritual guide."]||"Serge Abi — "+({en:"Discover. Explore. Transform.",fr:"Découvrir. Explorer. Transformer.",es:"Descubre. Explora. Transforma.",ar:"اكتشف. استكشف. تحوّل."}[activeLanguage]);languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello, I’m on the Sergeabi.com website! Can you assist me?';ayaWidget.href='https://wa.me/33756987598?text='+encodeURIComponent(greeting);}localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
+function applyLanguage(lang){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello, I’m on the Sergeabi.com website! Can you assist me?';ayaWidget.href='https://wa.me/33756987598?text='+encodeURIComponent(greeting);}localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
 languageButtons.forEach(button=>button.addEventListener('click',()=>applyLanguage(button.dataset.language)));applyLanguage(localStorage.getItem('serge-language')||'en');
 
