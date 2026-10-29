@@ -66,3 +66,31 @@
   .journal-footer{display:grid;grid-template-columns:1fr auto;gap:18px;padding:30px 24px calc(145px + env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){.journal-page *{scroll-behavior:auto}}
+
+/* Article template layout: these classes apply only after a complete essay is published. */
+.journal-article-header{max-width:1120px;margin:0 auto;padding-top:90px;padding-bottom:60px}
+.journal-article-header nav{margin-bottom:32px;font-size:12px;color:var(--muted)}
+.journal-article-header nav a{color:var(--gold)}
+.journal-article-header h1{font-size:clamp(48px,6.4vw,98px);line-height:1.05;letter-spacing:-.06em;margin:20px 0}
+.journal-article-deck{font-size:clamp(20px,2.2vw,28px);line-height:1.5;color:#d6dacc;max-width:850px}
+.journal-byline{font-size:13px;color:var(--muted);margin-top:25px}.journal-byline a{color:var(--gold)}
+.journal-article-cover{max-width:1300px;margin:0 auto 62px}
+.journal-article-cover img{max-height:600px;object-fit:cover}
+.journal-article-cover figcaption{font-size:12px;color:var(--muted);margin-top:12px}
+.journal-article-body{max-width:910px;margin:0 auto 105px}
+.journal-article-body p,.journal-article-body li{font-size:19px;line-height:1.85;color:#d4d9cd;margin-bottom:24px}
+.journal-article-body h2{font-size:clamp(30px,3vw,45px);margin:54px 0 18px}
+.journal-article-body a,.journal-article-related a,.journal-article-cta a:not(.journal-link-primary){color:var(--gold);text-decoration:underline;text-underline-offset:4px}
+.journal-article-body blockquote{margin:45px 0;border-left:2px solid var(--gold);padding:16px 28px;font:italic clamp(24px,2.8vw,38px)/1.4 Georgia,serif;color:var(--gold)}
+.journal-article-cta{background:#1a2119;padding-top:75px;padding-bottom:85px;border-block:1px solid var(--line)}
+.journal-article-cta h2{max-width:700px;margin-top:18px}
+.journal-article-cta p:not(.journal-kicker){font-size:16px;color:var(--muted);margin-top:25px}
+.journal-article-related{padding-top:75px;padding-bottom:110px}.journal-article-related h2{font-size:clamp(30px,3.4vw,50px)}
+@media(max-width:760px){
+.journal-article-header{padding-top:65px;padding-bottom:45px}
+.journal-article-deck{font-size:20px}
+.journal-article-body{margin-bottom:80px}
+.journal-article-body p,.journal-article-body li{font-size:17px}
+.journal-article-cover{margin-bottom:42px}
+.journal-article-cta{padding-block:65px}
+}
