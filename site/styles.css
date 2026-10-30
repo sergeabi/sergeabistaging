@@ -342,3 +342,19 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
     flex:1 1 100%;
   }
 }
+
+/* Desktop journey: use the full available row for the three transformation steps.
+   This prevents the Explore sentence from wrapping under its final words without
+   forcing mobile or accessibility text to overflow. */
+@media(min-width:761px){
+  .journey-transformation-steps{
+    grid-column:1 / -1;
+    width:100%;
+    max-width:none;
+    justify-self:stretch;
+  }
+  .journey-transformation .journey-steps{max-width:none}
+}
+@media(min-width:1100px){
+  .journey-steps li:nth-child(2){white-space:nowrap}
+}
