@@ -2,10 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sergeabi.com/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://sergeabi.com/privacy.html</loc>
     <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://sergeabi.com/journal/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://sergeabi.com/journal/signs-you-need-a-life-reset/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://sergeabi.com/journal/finding-direction-when-you-feel-lost/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://sergeabi.com/journal/leaving-consulting-search-for-freedom/</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 </urlset>
