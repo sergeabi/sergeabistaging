@@ -483,3 +483,16 @@ footer .footer-brand-sunset img{display:block;width:170px;height:auto;object-fit
 body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is(.about-story-copy>p,.about-story-expanded p){font-size:calc(17px * var(--reading-factor))!important;line-height:1.72}
 @media(max-width:940px){.about-story-dark .about-story-layout{grid-template-columns:1fr;gap:38px}.about-story-dark .about-story-portrait{max-width:650px;margin:auto}.about-story-dark .about-story-copy{max-width:650px;margin:0 auto}}
 @media(max-width:760px){.about-story-dark{padding:48px 24px 65px}.about-story-dark .about-story-layout{gap:35px}.about-story-dark h2{font-size:clamp(39px,10vw,53px);margin-bottom:20px}.about-story-dark .about-story-copy>p{font-size:16px;line-height:1.7}.about-story-dark .about-story-portrait{aspect-ratio:1}.about-story-dark:before{width:220px;right:-120px;top:52%}}
+
+
+/* The original dark-and-gold WhatsApp control belongs on the right.
+   Move the floating text magnifier left to avoid two fixed controls overlapping.
+   The homepage magnifier stays in its existing header position. */
+.aya-chat-widget{left:auto;right:22px}
+.text-magnifier{right:auto;left:22px}
+.site-header .text-magnifier{left:auto}
+@media(max-width:760px){
+  .aya-chat-widget{left:auto;right:16px}
+  .text-magnifier{right:auto;left:16px}
+  .site-header .text-magnifier{left:auto}
+}
