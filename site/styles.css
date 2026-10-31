@@ -564,3 +564,22 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
     margin-left:0;margin-right:clamp(30px,5.6vw,100px);text-align:right;
   }
 }
+
+/* Hero arrow spacing and accessible scroll-to-top shortcut. */
+@media(max-width:760px){
+  .hero-sunset .mobile-hero-scroll{margin-top:25px}
+}
+.scroll-to-top{
+  position:fixed;right:22px;bottom:90px;z-index:59;
+  display:grid;place-items:center;width:48px;height:48px;
+  border:1px solid rgba(242,183,103,.65);border-radius:50%;
+  background:#172019;color:var(--sunset-gold);box-shadow:0 10px 30px #0006;
+  text-decoration:none;opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(10px);transition:opacity .2s,visibility .2s,transform .2s,background .2s;
+}
+.scroll-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.scroll-to-top:hover{background:#243329;transform:translateY(-2px)}
+.scroll-to-top:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.scroll-to-top svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:760px){.scroll-to-top{right:16px;bottom:16px;width:46px;height:46px}}
+@media(prefers-reduced-motion:reduce){.scroll-to-top{transition:none}}
