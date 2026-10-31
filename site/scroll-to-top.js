@@ -6,8 +6,10 @@
   let pending = false;
   const update = () => {
     pending = false;
-    const threshold = Math.max(300, Math.min(hero.offsetHeight * .65, 700));
-    const visible = window.scrollY > threshold;
+    const isMobile = matchMedia('(max-width: 760px)').matches;
+    // On mobile show soon after scrolling, rather than waiting for most of a tall hero.
+    const threshold = isMobile ? 160 : Math.max(300, Math.min(hero.offsetHeight * .65, 700));
+    const visible = (window.scrollY || document.documentElement.scrollTop || 0) > threshold;
     control.classList.toggle('is-visible', visible);
     control.setAttribute('aria-hidden', String(!visible));
     control.tabIndex = visible ? 0 : -1;
