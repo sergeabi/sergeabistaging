@@ -358,3 +358,141 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
 @media(min-width:1100px){
   .journey-steps li:nth-child(2){white-space:nowrap}
 }
+
+
+/* 2026-10-31 — cinematic sunset hero and header, based on Serge's approved mockup.
+   Scoped to the header/hero so the rest of the site and calculator stay unchanged. */
+:root{--sunset-gold:#f2b767;--sunset-white:#fff9ed}
+.site-header{height:101px;padding-inline:clamp(22px,4.9vw,86px);gap:clamp(16px,2.3vw,40px);border-bottom:0;background:linear-gradient(#0c11134a,#0c111300);align-items:center}
+.site-header .brand-sunset{display:flex;flex:0 0 auto;align-items:center;min-width:0;padding:0}
+.site-header .brand-logo-image{width:clamp(190px,16.6vw,269px);height:auto;object-fit:contain;filter:drop-shadow(0 2px 8px #0005)}
+.site-header .desktop-nav{display:flex;flex:1;justify-content:center;gap:clamp(14px,2.1vw,38px);align-items:center;white-space:nowrap}
+.site-header .desktop-nav a{font:700 clamp(11px,.85vw,14px)/1.35 var(--sans);letter-spacing:.015em;color:#f5f2e8;position:relative;padding:20px 0}
+.site-header .desktop-nav a:after{height:2px;bottom:10px;background:var(--sunset-gold);transition:width .25s}
+.site-header .desktop-nav a:hover,.site-header .desktop-nav a.is-current{color:var(--sunset-gold)}
+.site-header .desktop-nav a.is-current:after{width:100%}
+.site-header .header-actions{display:flex;align-items:center;gap:clamp(10px,1.45vw,22px);flex:none}
+.site-header .text-magnifier{position:relative;inset:auto;right:auto;bottom:auto;display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:0;background:transparent;color:#fff;box-shadow:none;backdrop-filter:none}
+.site-header .text-magnifier:hover{background:transparent;color:var(--sunset-gold);transform:none}
+.site-header .text-magnifier svg{width:27px;height:27px;stroke-width:1.5}
+.site-header .text-magnifier .zoom-level{right:-4px;bottom:-2px;opacity:.8;font-size:7px;border:0;background:#161b16aa;padding:2px 3px}
+.site-header .language-widget{position:relative}
+.site-header .language-toggle{display:flex;align-items:center;gap:8px;border:0;background:transparent;padding:9px 0;color:#f6f2e8;font:700 13px/1 var(--sans)}
+.site-header .language-toggle:hover,.site-header .language-toggle[aria-expanded=true]{color:var(--sunset-gold)}
+.site-header .language-globe{width:24px;height:24px}
+.site-header .language-chevron{width:15px;height:15px}
+.site-header .language-switcher{position:absolute;top:calc(100% + 10px);right:0;z-index:45;display:grid;grid-template-columns:repeat(2,minmax(40px,1fr));gap:6px;min-width:118px;padding:10px;border:1px solid #ffffff44;border-radius:12px;background:#161b17f5;box-shadow:0 14px 35px #0008;backdrop-filter:blur(12px)}
+.site-header .language-switcher[hidden]{display:none!important}
+.site-header .language-switcher button{width:100%;height:36px;border-radius:7px;color:#fff;font-size:12px;background:#ffffff14}
+.site-header .language-switcher button.is-active,.site-header .language-switcher button:hover{background:var(--sunset-gold);color:#181610}
+.hero-sunset{position:relative;height:100svh;min-height:690px;max-height:980px;overflow:hidden;background:#231d16}
+.hero-sunset .hero-picture{position:absolute;inset:0;z-index:-3}
+.hero-sunset .hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.hero-sunset .hero-overlay{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#0d1011a8 0%,#14171690 31%,#12131218 58%,#12111100 100%),linear-gradient(0deg,#160f0b2b,transparent 35%,#15181b18 100%)}
+.hero-sunset .hero-content{position:absolute;z-index:3;top:clamp(174px,21.4vh,245px);left:clamp(30px,5.6vw,100px);width:min(715px,52vw);color:var(--sunset-white)}
+.hero-sunset .hero-content h1{font:800 clamp(51px,4.65vw,78px)/1.055 var(--sans);letter-spacing:-.052em;color:#fff;text-wrap:balance;text-shadow:0 3px 22px #0004}
+.hero-sunset .hero-invitation{margin-top:clamp(25px,3.25vh,37px);font:400 clamp(16px,1.36vw,22px)/1.44 var(--sans);color:#fff8f0;max-width:695px;text-shadow:0 1px 8px #0007}
+.hero-sunset .hero-rule{height:2px;width:53px;background:var(--sunset-gold);margin:clamp(21px,3vh,32px) 0 clamp(18px,2.7vh,29px)}
+.hero-sunset .hero-reflection{font:italic 400 clamp(17px,1.56vw,24px)/1.46 var(--sans);letter-spacing:-.02em;color:#fff5e7;text-shadow:0 1px 8px #0005}
+.hero-sunset .hero-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:clamp(12px,1.55vw,26px);margin-top:clamp(27px,4vh,44px)}
+.hero-sunset .hero-buttons a{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:56px;padding:15px 23px;border-radius:11px;font:800 12px/1.35 var(--sans);letter-spacing:.012em;white-space:nowrap;transition:transform .2s,background .2s,border-color .2s}
+.hero-sunset .hero-buttons a:hover{transform:translateY(-2px)}
+.hero-sunset .hero-primary{background:var(--sunset-gold);color:#151513;border:1px solid var(--sunset-gold);box-shadow:0 6px 20px #0002}
+.hero-sunset .hero-primary:hover{background:#ffd28f}
+.hero-sunset .hero-primary svg{width:20px;height:20px}
+.hero-sunset .hero-secondary{background:#10100f38;color:#fff;border:2px solid #fffaf5}
+.hero-sunset .hero-secondary:hover{background:#ffffff24}
+.hero-sunset .hero-vertical,.hero-sunset .hero-bottom{display:none}
+.rtl .hero-sunset .hero-content{left:auto;right:clamp(30px,5.6vw,100px);text-align:right}
+.rtl .hero-sunset .hero-buttons{flex-direction:row-reverse;justify-content:flex-end}
+@media(max-width:1180px){
+ .site-header .desktop-nav{display:none}
+ .site-header .menu-toggle{display:flex;align-items:center;gap:12px;border:0;padding:10px;background:transparent;font:700 12px/1 var(--sans);color:#fff}
+ .site-header #mobile-nav{position:fixed;top:90px;left:0;right:0;bottom:0;z-index:40;display:flex;flex-direction:column;gap:6px;overflow-y:auto;padding:25px clamp(24px,5vw,70px) 120px;background:#111711f7;backdrop-filter:blur(18px)}
+ .site-header #mobile-nav a{display:block;padding:13px 0;border-bottom:1px solid #ffffff25;font:700 clamp(20px,3vw,31px)/1.3 var(--sans);letter-spacing:.015em;color:#f5f1e7}
+ .site-header #mobile-nav a:hover{color:var(--sunset-gold)}
+ .site-header #mobile-nav .mobile-language{position:static;display:flex!important;flex-direction:row;gap:8px;width:auto;min-width:0;margin:12px 0 20px;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+ .site-header #mobile-nav .mobile-language button{width:40px;height:40px;border-radius:50%}
+}
+@media(max-width:760px){
+ .site-header{height:82px;padding-inline:20px;gap:10px}
+ .site-header .brand-logo-image{width:175px}
+ .site-header .header-actions{display:flex;gap:5px}
+ .site-header .text-magnifier{width:34px;height:38px}
+ .site-header .text-magnifier svg{width:22px;height:22px}
+ .site-header .text-magnifier .zoom-level{bottom:0;right:-3px}
+ .site-header .language-toggle{gap:4px;font-size:11px}
+ .site-header .language-globe{width:21px;height:21px}
+ .site-header .language-chevron{width:13px;height:13px}
+ .site-header .menu-toggle{padding:8px 0 8px 4px;gap:6px}
+ .site-header .menu-toggle>span:first-child{display:none}
+ .site-header #mobile-nav{top:81px}
+ .hero-sunset{height:100svh;min-height:730px;max-height:none}
+ .hero-sunset .hero-picture{transform:none!important}
+ .hero-sunset .hero-picture img{object-position:26% center}
+ .hero-sunset .hero-overlay{background:linear-gradient(180deg,#111110b3 0%,#13120d9a 38%,#1613098a 72%,#15100a9c 100%),linear-gradient(90deg,#10100bb3 0%,#11100d35 100%)}
+ .hero-sunset .hero-content{left:23px;right:23px;top:clamp(124px,16vh,170px);width:auto;bottom:auto}
+ .hero-sunset .hero-content h1{font-size:clamp(36px,8.8vw,58px);line-height:1.08;letter-spacing:-.045em}
+ .hero-sunset .hero-invitation{font-size:clamp(15px,3.6vw,18px);line-height:1.47;margin-top:26px}
+ .hero-sunset .hero-rule{margin:22px 0 19px}
+ .hero-sunset .hero-reflection{font-size:clamp(16px,4vw,20px)}
+ .hero-sunset .hero-buttons{gap:12px;margin-top:27px;align-items:stretch}
+ .hero-sunset .hero-buttons a{min-height:52px;padding:13px 15px;font-size:11px}
+ .hero-sunset .hero-primary{flex:1 1 100%}
+ .hero-sunset .hero-secondary{flex:1 1 100%}
+ .rtl .hero-sunset .hero-content{left:23px;right:23px}
+ .rtl .hero-sunset .hero-buttons{flex-direction:column}
+}
+@media(max-width:395px){
+ .site-header .brand-logo-image{width:143px}
+ .site-header .language-toggle .language-current,.site-header .language-chevron{display:none}
+ .hero-sunset .hero-content{top:120px}
+}
+@media(prefers-reduced-motion:reduce){.hero-sunset .hero-buttons a{transition:none}}
+
+/* Keep the new wordmark elegant in the dark footer as well. */
+footer .footer-brand-sunset img{display:block;width:170px;height:auto;object-fit:contain}
+@media(max-width:760px){footer .footer-brand-sunset img{width:140px}}
+
+
+/* PR #28: restored full-height original sunset hero and dark, square portrait story. */
+/* Full-height hero sizing, copy, buttons, typography and header are inherited untouched from PR #26. */
+.about-story-dark{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(135deg,#171c16,#10150f 70%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--text);padding:clamp(46px,6vw,108px) var(--gutter)}
+.about-story-dark:before{content:"";position:absolute;top:8%;right:-120px;width:min(37vw,420px);aspect-ratio:1;border:1px solid #c6a86e20;border-radius:50%;box-shadow:0 0 0 34px #c6a86e06,0 0 0 82px #c6a86e05;pointer-events:none;z-index:-1}
+.about-story-dark .anchor-alias{position:absolute;top:0;left:0}
+.about-story-dark .about-story-layout{max-width:1510px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(46px,7vw,132px);align-items:center}
+.about-story-dark .about-story-portrait{display:block;margin:0;width:100%;height:auto;aspect-ratio:1/1;border:1px solid #c6a86e23;border-radius:8px;overflow:hidden;background:#2d261e;box-shadow:0 22px 55px #0005}
+.about-story-dark .about-story-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;aspect-ratio:1/1}
+.about-story-dark .about-story-copy{align-self:center;max-width:620px;position:relative;z-index:1}
+.about-story-dark .about-story-eyebrow{display:flex;align-items:center;gap:17px;margin-bottom:15px}
+.about-story-dark .about-story-eyebrow span:first-child{color:var(--gold);font:800 18px/1.3 var(--sans);letter-spacing:.08em}
+.about-story-dark .about-story-eyebrow span:last-child{width:47px;height:1px;background:var(--gold)}
+.about-story-dark h2{font:800 clamp(40px,4.3vw,74px)/1.1 var(--sans);letter-spacing:-.055em;color:#f2efe4;margin:0 0 clamp(22px,3vw,42px)}
+.about-story-dark .about-story-copy>p{max-width:620px;margin:0;color:#cecfc3;font-size:clamp(16px,1.15vw,19px);line-height:1.75}
+.about-story-dark .about-story-copy>p+p{margin-top:22px}
+.about-story-dark .about-story-copy>p strong{font-weight:800;color:#efe2c6}
+.about-story-dark .about-story-details{margin-top:31px}
+.about-story-dark .about-story-details summary{list-style:none;cursor:pointer}
+.about-story-dark .about-story-details summary::-webkit-details-marker{display:none}
+.about-story-dark .about-story-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:11px 24px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold);font:800 12px/1.3 var(--sans);letter-spacing:.045em;transition:background .25s,color .25s}
+.about-story-dark .about-story-button svg{width:18px;height:18px}
+.about-story-dark .about-story-button:hover{background:var(--gold);color:var(--bg)}
+.about-story-dark .about-story-details[open] .about-story-button svg{transform:rotate(90deg)}
+.about-story-dark .about-story-expanded{margin-top:20px;max-width:620px;border-left:2px solid var(--gold);padding:5px 0 5px 20px}
+.about-story-dark .about-story-expanded p{color:#d1d1c6;margin:0 0 16px;font-size:15px;line-height:1.7}
+body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is(.about-story-copy>p,.about-story-expanded p){font-size:calc(17px * var(--reading-factor))!important;line-height:1.72}
+@media(max-width:940px){.about-story-dark .about-story-layout{grid-template-columns:1fr;gap:38px}.about-story-dark .about-story-portrait{max-width:650px;margin:auto}.about-story-dark .about-story-copy{max-width:650px;margin:0 auto}}
+@media(max-width:760px){.about-story-dark{padding:48px 24px 65px}.about-story-dark .about-story-layout{gap:35px}.about-story-dark h2{font-size:clamp(39px,10vw,53px);margin-bottom:20px}.about-story-dark .about-story-copy>p{font-size:16px;line-height:1.7}.about-story-dark .about-story-portrait{aspect-ratio:1}.about-story-dark:before{width:220px;right:-120px;top:52%}}
+
+
+/* The original dark-and-gold WhatsApp control belongs on the right.
+   Move the floating text magnifier left to avoid two fixed controls overlapping.
+   The homepage magnifier stays in its existing header position. */
+.aya-chat-widget{left:auto;right:22px}
+.text-magnifier{right:auto;left:22px}
+.site-header .text-magnifier{left:auto}
+@media(max-width:760px){
+  .aya-chat-widget{left:auto;right:16px}
+  .text-magnifier{right:auto;left:16px}
+  .site-header .text-magnifier{left:auto}
+}
