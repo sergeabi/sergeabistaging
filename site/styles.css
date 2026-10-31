@@ -496,3 +496,41 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
   .text-magnifier{right:auto;left:16px}
   .site-header .text-magnifier{left:auto}
 }
+
+
+/* Mobile refinement: a discreet scroll cue beneath the hero actions. */
+.mobile-hero-scroll{display:none}
+@media(max-width:760px){
+  .hero-sunset .mobile-hero-scroll{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:13px auto 0;
+    width:52px;
+    height:52px;
+    border:1px solid rgba(242,183,103,.65);
+    border-radius:50%;
+    background:rgba(13,18,15,.24);
+    color:var(--sunset-gold);
+    text-decoration:none;
+    transition:background .2s,transform .2s;
+  }
+  .hero-sunset .mobile-hero-scroll svg{
+    width:23px;
+    height:23px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .hero-sunset .mobile-hero-scroll:hover{background:rgba(242,183,103,.15);transform:translateY(3px)}
+  .hero-sunset .mobile-hero-scroll:focus-visible{outline:2px solid #fff;outline-offset:4px}
+
+  /* Chat goes left; the floating magnifier on notes/privacy goes right.
+     Homepage magnifier remains in the header. */
+  .aya-chat-widget{left:16px;right:auto}
+  .text-magnifier{left:auto;right:16px}
+  .site-header .text-magnifier{left:auto;right:auto}
+}
+@media(prefers-reduced-motion:reduce){.hero-sunset .mobile-hero-scroll{transition:none}}
