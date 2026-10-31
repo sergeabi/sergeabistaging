@@ -453,3 +453,76 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
 /* Keep the new wordmark elegant in the dark footer as well. */
 footer .footer-brand-sunset img{display:block;width:170px;height:auto;object-fit:contain}
 @media(max-width:760px){footer .footer-brand-sunset img{width:140px}}
+
+
+/* 2026-10-31: wide, slightly zoomed-out golden-hour hero */
+.hero-sunset{height:clamp(525px,56svh,680px);min-height:525px;max-height:680px}
+.hero-sunset .hero-picture{transform:none!important;transition:none}
+.hero-sunset .hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center center;animation:none!important;transform:none!important}
+.hero-sunset .hero-overlay{background:linear-gradient(90deg,rgba(8,11,9,.42),rgba(8,11,9,.23) 47%,transparent 70%),linear-gradient(180deg,#100f0e6e,transparent 24%,transparent 70%,#16120a2b)}
+.hero-sunset .hero-content{top:clamp(110px,13.3svh,175px);left:clamp(30px,7.3vw,122px);width:min(650px,53vw)}
+.hero-sunset .hero-content h1{font-size:clamp(39px,3.2vw,58px);font-weight:800;line-height:1.04;letter-spacing:-.046em}
+.hero-sunset .hero-invitation{margin-top:22px;font-size:clamp(15px,1.2vw,20px);line-height:1.48}
+.hero-sunset .hero-rule{margin:18px 0 14px;height:2px;width:46px}
+.hero-sunset .hero-reflection{font-size:clamp(17px,1.35vw,22px);line-height:1.45}
+.hero-sunset .hero-buttons{margin-top:27px;gap:20px}
+.hero-sunset .hero-buttons a{min-height:50px;padding:12px 22px;font-size:12px;border-radius:10px}
+
+/* Replace old Manifesto + Journey with one light editorial section. */
+.about-story{position:relative;overflow:hidden;padding:clamp(20px,2.2vw,32px) clamp(24px,6.3vw,115px) clamp(34px,4.3vw,75px);background:#f6f0e8;color:#242424;isolation:isolate}
+.about-story:after{content:"";position:absolute;z-index:-1;right:-54px;top:4%;width:300px;height:300px;border:17px solid rgba(126,111,91,.105);border-left-color:rgba(126,111,91,.045);border-bottom-color:rgba(126,111,91,.06);border-radius:50%;transform:rotate(-28deg);pointer-events:none}
+.about-story-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.98fr);align-items:center;gap:clamp(36px,4.5vw,78px);max-width:1570px;margin:0 auto}
+.about-story-portrait{overflow:hidden;margin:0;border-radius:10px;aspect-ratio:1.78;box-shadow:0 14px 38px #483b2820}
+.about-story-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.about-story-copy{position:relative;z-index:1;min-width:0;align-self:center}
+.about-story-eyebrow{display:flex;align-items:center;gap:18px;margin-bottom:6px}
+.about-story-eyebrow>span:first-child{font:800 22px/1.25 var(--sans);color:#d69c4c}
+.about-story-eyebrow>span:last-child{width:48px;height:2px;background:#d69c4c}
+.about-story h2{font:800 clamp(36px,3.15vw,55px)/1.12 var(--sans);letter-spacing:-.045em;color:#242424;margin:3px 0 clamp(12px,1.2vw,20px)}
+.about-story-copy>p{max-width:600px;font-size:clamp(13px,1.0vw,16px);line-height:1.64;color:#252525}
+.about-story-copy>p+p{margin-top:14px}
+.about-story strong{font-weight:800;color:#111}
+.about-story-details{margin-top:21px}
+.about-story-details summary{list-style:none;cursor:pointer}
+.about-story-details summary::-webkit-details-marker{display:none}
+.about-story-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:43px;padding:9px 24px;border:1.5px solid #252525;border-radius:999px;color:#222;background:transparent;font:800 12px/1.3 var(--sans);transition:background .2s,color .2s}
+.about-story-button svg{width:16px;height:16px;transition:transform .25s}
+.about-story-button:hover{background:#252525;color:#fff}
+.about-story-details[open] .about-story-button svg{transform:rotate(90deg)}
+.about-story-expanded{max-width:600px;margin-top:15px;padding:18px 20px 4px;border-left:2px solid #d69c4c;background:rgba(255,255,255,.48)}
+.about-story-expanded p{margin:0 0 14px;color:#292824;font-size:14px;line-height:1.63}
+.anchor-alias{position:absolute;top:0;left:0}
+body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-copy>p,body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-expanded p{font-size:calc(16px * var(--reading-factor))!important;line-height:1.6}
+
+/* White pill + green circular WhatsApp emblem, matching the supplied design */
+.aya-chat-widget{position:fixed!important;left:auto!important;right:clamp(14px,2.4vw,38px)!important;bottom:clamp(15px,2.8vw,34px)!important;display:inline-flex;flex-direction:row;align-items:center;gap:9px;max-width:calc(100vw - 24px);width:auto;height:auto;min-height:0;padding:0;border:0;border-radius:0;background:transparent;color:#18211b;box-shadow:none;backdrop-filter:none;z-index:60}
+.aya-chat-widget:hover{background:transparent;color:#18211b;transform:translateY(-2px);border:0}
+.aya-chat-widget .aya-chat-label{display:flex;align-items:center;justify-content:center;position:static;overflow:visible;width:auto;height:44px;padding:10px 18px;border-radius:999px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.16);font:800 12px/1.3 var(--sans);color:#171917;white-space:nowrap}
+.aya-chat-widget .aya-chat-icon{display:grid;place-items:center;position:static;flex:none;width:56px;height:56px;padding:0;border-radius:50%;background:#09b95e;border:3px solid #f4fff6;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.aya-chat-widget .aya-chat-icon svg{display:block;width:30px;height:30px;fill:#fff;stroke:none}
+.aya-chat-widget:focus-visible{outline:3px solid #d69c4c;outline-offset:4px}
+@media(max-width:1100px){.about-story-layout{gap:clamp(26px,3.5vw,50px)}.about-story-portrait{aspect-ratio:1.28}.about-story h2{font-size:clamp(33px,3.7vw,48px)}}
+@media(max-width:760px){
+ .hero-sunset{min-height:750px;max-height:none;height:100svh}
+ .hero-sunset .hero-picture{transform:none!important}
+ .hero-sunset .hero-picture img{object-position:center bottom;transform:none!important}
+ .hero-sunset .hero-overlay{background:linear-gradient(180deg,#11120fcc 0%,#11120fdb 20%,#11120fc7 42%,#11120f4d 68%,#10130f22 100%)}
+ .hero-sunset .hero-content{position:absolute;top:clamp(128px,15svh,170px);left:22px;right:22px;width:auto;padding:0}
+ .hero-sunset .hero-content h1{font-size:clamp(35px,9.5vw,50px)}
+ .hero-sunset .hero-invitation{font-size:clamp(15px,3.7vw,18px);margin-top:20px}
+ .hero-sunset .hero-rule{margin:18px 0 14px}
+ .hero-sunset .hero-reflection{font-size:18px}
+ .hero-sunset .hero-buttons{margin-top:22px;gap:10px}
+ .hero-sunset .hero-buttons a{font-size:11px;min-height:46px;padding:10px 13px}
+ .about-story{padding:26px 22px 54px}
+ .about-story-layout{grid-template-columns:1fr;gap:25px}
+ .about-story-portrait{aspect-ratio:1.38}
+ .about-story-copy>p{font-size:15px;line-height:1.64}
+ .about-story h2{font-size:41px;margin-bottom:17px}
+ .about-story:after{width:210px;height:210px;right:-100px;top:43%}
+ .aya-chat-widget{right:12px!important;bottom:16px!important;gap:7px}
+ .aya-chat-widget .aya-chat-label{font-size:11px;height:41px;padding:9px 13px}
+ .aya-chat-widget .aya-chat-icon{width:49px;height:49px}
+ .aya-chat-widget .aya-chat-icon svg{width:26px;height:26px}
+}
+@media(max-width:390px){.hero-sunset .hero-content{top:118px}.hero-sunset .hero-content h1{font-size:35px}.hero-sunset .hero-buttons a{font-size:10px}}
