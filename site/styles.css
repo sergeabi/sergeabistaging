@@ -453,3 +453,33 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) #mobile-nav>a{font-si
 /* Keep the new wordmark elegant in the dark footer as well. */
 footer .footer-brand-sunset img{display:block;width:170px;height:auto;object-fit:contain}
 @media(max-width:760px){footer .footer-brand-sunset img{width:140px}}
+
+
+/* PR #28: restored full-height original sunset hero and dark, square portrait story. */
+/* Full-height hero sizing, copy, buttons, typography and header are inherited untouched from PR #26. */
+.about-story-dark{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(135deg,#171c16,#10150f 70%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--text);padding:clamp(46px,6vw,108px) var(--gutter)}
+.about-story-dark:before{content:"";position:absolute;top:8%;right:-120px;width:min(37vw,420px);aspect-ratio:1;border:1px solid #c6a86e20;border-radius:50%;box-shadow:0 0 0 34px #c6a86e06,0 0 0 82px #c6a86e05;pointer-events:none;z-index:-1}
+.about-story-dark .anchor-alias{position:absolute;top:0;left:0}
+.about-story-dark .about-story-layout{max-width:1510px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(46px,7vw,132px);align-items:center}
+.about-story-dark .about-story-portrait{display:block;margin:0;width:100%;height:auto;aspect-ratio:1/1;border:1px solid #c6a86e23;border-radius:8px;overflow:hidden;background:#2d261e;box-shadow:0 22px 55px #0005}
+.about-story-dark .about-story-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;aspect-ratio:1/1}
+.about-story-dark .about-story-copy{align-self:center;max-width:620px;position:relative;z-index:1}
+.about-story-dark .about-story-eyebrow{display:flex;align-items:center;gap:17px;margin-bottom:15px}
+.about-story-dark .about-story-eyebrow span:first-child{color:var(--gold);font:800 18px/1.3 var(--sans);letter-spacing:.08em}
+.about-story-dark .about-story-eyebrow span:last-child{width:47px;height:1px;background:var(--gold)}
+.about-story-dark h2{font:800 clamp(40px,4.3vw,74px)/1.1 var(--sans);letter-spacing:-.055em;color:#f2efe4;margin:0 0 clamp(22px,3vw,42px)}
+.about-story-dark .about-story-copy>p{max-width:620px;margin:0;color:#cecfc3;font-size:clamp(16px,1.15vw,19px);line-height:1.75}
+.about-story-dark .about-story-copy>p+p{margin-top:22px}
+.about-story-dark .about-story-copy>p strong{font-weight:800;color:#efe2c6}
+.about-story-dark .about-story-details{margin-top:31px}
+.about-story-dark .about-story-details summary{list-style:none;cursor:pointer}
+.about-story-dark .about-story-details summary::-webkit-details-marker{display:none}
+.about-story-dark .about-story-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:11px 24px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold);font:800 12px/1.3 var(--sans);letter-spacing:.045em;transition:background .25s,color .25s}
+.about-story-dark .about-story-button svg{width:18px;height:18px}
+.about-story-dark .about-story-button:hover{background:var(--gold);color:var(--bg)}
+.about-story-dark .about-story-details[open] .about-story-button svg{transform:rotate(90deg)}
+.about-story-dark .about-story-expanded{margin-top:20px;max-width:620px;border-left:2px solid var(--gold);padding:5px 0 5px 20px}
+.about-story-dark .about-story-expanded p{color:#d1d1c6;margin:0 0 16px;font-size:15px;line-height:1.7}
+body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is(.about-story-copy>p,.about-story-expanded p){font-size:calc(17px * var(--reading-factor))!important;line-height:1.72}
+@media(max-width:940px){.about-story-dark .about-story-layout{grid-template-columns:1fr;gap:38px}.about-story-dark .about-story-portrait{max-width:650px;margin:auto}.about-story-dark .about-story-copy{max-width:650px;margin:0 auto}}
+@media(max-width:760px){.about-story-dark{padding:48px 24px 65px}.about-story-dark .about-story-layout{gap:35px}.about-story-dark h2{font-size:clamp(39px,10vw,53px);margin-bottom:20px}.about-story-dark .about-story-copy>p{font-size:16px;line-height:1.7}.about-story-dark .about-story-portrait{aspect-ratio:1}.about-story-dark:before{width:220px;right:-120px;top:52%}}
