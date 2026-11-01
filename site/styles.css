@@ -583,3 +583,8 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
 .scroll-to-top svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:760px){.scroll-to-top{right:16px;bottom:max(16px,env(safe-area-inset-bottom));width:46px;height:46px;z-index:90}}
 @media(prefers-reduced-motion:reduce){.scroll-to-top{transition:none}}
+
+/* Match the other mobile navigation labels without altering desktop or translations. */
+@media(max-width:760px){
+  .site-header #mobile-nav a[href="index.html#connect"]{text-transform:uppercase}
+}
