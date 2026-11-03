@@ -82,6 +82,196 @@ es:[["WHO AM I.","QUIÉN SOY."],["In 2018, I hit a wall. Burnout, misalignment, 
 ar:[["WHO AM I.","من أنا؟"],["In 2018, I hit a wall. Burnout, misalignment, and a deep sense that I was living someone else's life. At an airport, I made a decision:","في عام 2018 وصلت إلى طريق مسدود. إرهاق وانفصال عن ذاتي وشعور بأنني أعيش حياة شخص آخر. في المطار اتخذت قراراً:"],["I left the 9–5, sold what I didn't need, and set off to explore the world, myself, and what it truly means to live free.","تركت العمل التقليدي وبعت ما لا أحتاج إليه وانطلقت لاكتشاف العالم ونفسي ومعنى العيش بحرية."],["Today, I guide people through their transformation — to reconnect, realign, and create a life that feels true.","اليوم أرافق الناس في رحلة التحول كي يعيدوا الاتصال بذواتهم ويتوازنوا ويبْنوا حياة صادقة معهم."],["MY STORY","قصتي"],["I was burning my life. Running from one client to another, racing through airport terminals — until I stopped and asked myself where I was really going.","كنت أستهلك حياتي متنقلاً بين العملاء والمطارات حتى توقفت وسألت نفسي إلى أين أمضي حقاً."],["I left Paris and set off on a two-year journey around the world to discover who I was, inside and out. That journey is still unfolding through entrepreneurship, meditation, community, and guiding others.","غادرت باريس في رحلة امتدت عامين حول العالم لأكتشف نفسي من الداخل والخارج. وما زالت هذه الرحلة تتجلى في ريادة الأعمال والتأمل وبناء المجتمع ومرافقة الآخرين."],["Discover your direction. Explore new possibilities. Transform awareness into action.","اكتشف طريقك. استكشف الفرص. حوّل الوعي إلى عمل."]]
 };
 for(const [lang, entries] of Object.entries(editorialStoryPairs)){const dict=dictionaries[lang];if(dict)for(const [source, translation] of entries)dict.set(source,translation);}
+
+const playWorkshopPairs={
+  "fr": [
+    [
+      "THE ART OF PLAY",
+      "L’ART DE JOUER"
+    ],
+    [
+      "A PRIVATE 1:1 EXPERIENCE",
+      "UN ATELIER INDIVIDUEL"
+    ],
+    [
+      "Plan like an adult.",
+      "Planifiez comme un adulte."
+    ],
+    [
+      "Believe like a child.",
+      "Croyez comme un enfant."
+    ],
+    [
+      "What if you could keep the wisdom of adulthood without losing the wonder of being a child?",
+      "Et si vous pouviez garder la sagesse de l’âge adulte sans perdre l’émerveillement de l’enfance ?"
+    ],
+    [
+      "We learn to be responsible, productive and serious. Somewhere along the way, we can forget how to play. This private workshop is an invitation to rediscover curiosity, joy and imagination—while keeping your feet on the ground.",
+      "Nous apprenons à être responsables, productifs et sérieux. En chemin, nous oublions parfois de jouer. Cet atelier individuel vous invite à retrouver la curiosité, la joie et l’imagination, tout en gardant les pieds sur terre."
+    ],
+    [
+      "THE ADULT",
+      "L’ADULTE"
+    ],
+    [
+      "Build with intention.",
+      "Construire avec intention."
+    ],
+    [
+      "Bring structure, discernment and practical steps to your dreams.",
+      "Apportez structure, discernement et étapes concrètes à vos rêves."
+    ],
+    [
+      "THE CHILD",
+      "L’ENFANT"
+    ],
+    [
+      "Live with wonder.",
+      "Vivre avec émerveillement."
+    ],
+    [
+      "Bring play, possibility, trust and the courage to try.",
+      "Retrouvez le jeu, les possibles, la confiance et l’audace d’essayer."
+    ],
+    [
+      "In our one-on-one session, we explore where life has become too heavy, reconnect with what makes you feel alive, and design a small experiment in play that fits your real life.",
+      "Lors de notre séance individuelle, nous explorons ce qui a rendu votre vie trop lourde, retrouvons ce qui vous fait vibrer et imaginons une petite expérience ludique adaptée à votre quotidien."
+    ],
+    [
+      "Explore the 1:1 workshop",
+      "Découvrir l’atelier individuel"
+    ],
+    [
+      "A LITTLE MORE WONDER. A LITTLE LESS WEIGHT.",
+      "PLUS D’ÉMERVEILLEMENT. MOINS DE POIDS."
+    ]
+  ],
+  "es": [
+    [
+      "THE ART OF PLAY",
+      "EL ARTE DE JUGAR"
+    ],
+    [
+      "A PRIVATE 1:1 EXPERIENCE",
+      "UN TALLER INDIVIDUAL"
+    ],
+    [
+      "Plan like an adult.",
+      "Planifica como adulto."
+    ],
+    [
+      "Believe like a child.",
+      "Cree como un niño."
+    ],
+    [
+      "What if you could keep the wisdom of adulthood without losing the wonder of being a child?",
+      "¿Y si pudieras conservar la sabiduría adulta sin perder el asombro de la infancia?"
+    ],
+    [
+      "We learn to be responsible, productive and serious. Somewhere along the way, we can forget how to play. This private workshop is an invitation to rediscover curiosity, joy and imagination—while keeping your feet on the ground.",
+      "Aprendemos a ser responsables, productivos y serios. Por el camino, a veces olvidamos jugar. Este taller individual te invita a recuperar la curiosidad, la alegría y la imaginación sin perder el contacto con la realidad."
+    ],
+    [
+      "THE ADULT",
+      "EL ADULTO"
+    ],
+    [
+      "Build with intention.",
+      "Construye con intención."
+    ],
+    [
+      "Bring structure, discernment and practical steps to your dreams.",
+      "Aporta estructura, criterio y pasos prácticos a tus sueños."
+    ],
+    [
+      "THE CHILD",
+      "EL NIÑO"
+    ],
+    [
+      "Live with wonder.",
+      "Vive con asombro."
+    ],
+    [
+      "Bring play, possibility, trust and the courage to try.",
+      "Recupera el juego, las posibilidades, la confianza y el valor de probar."
+    ],
+    [
+      "In our one-on-one session, we explore where life has become too heavy, reconnect with what makes you feel alive, and design a small experiment in play that fits your real life.",
+      "En nuestra sesión individual exploramos dónde se ha vuelto pesada la vida, reconectamos con lo que te hace sentir vivo y diseñamos un pequeño experimento de juego para tu día a día."
+    ],
+    [
+      "Explore the 1:1 workshop",
+      "Explora el taller individual"
+    ],
+    [
+      "A LITTLE MORE WONDER. A LITTLE LESS WEIGHT.",
+      "MÁS ASOMBRO. MENOS PESO."
+    ]
+  ],
+  "ar": [
+    [
+      "THE ART OF PLAY",
+      "فن اللعب"
+    ],
+    [
+      "A PRIVATE 1:1 EXPERIENCE",
+      "ورشة فردية خاصة"
+    ],
+    [
+      "Plan like an adult.",
+      "خطّط كراشد."
+    ],
+    [
+      "Believe like a child.",
+      "وآمن كطفل."
+    ],
+    [
+      "What if you could keep the wisdom of adulthood without losing the wonder of being a child?",
+      "ماذا لو احتفظت بحكمة الكبار دون أن تفقد دهشة الطفولة؟"
+    ],
+    [
+      "We learn to be responsible, productive and serious. Somewhere along the way, we can forget how to play. This private workshop is an invitation to rediscover curiosity, joy and imagination—while keeping your feet on the ground.",
+      "نتعلّم أن نكون مسؤولين ومنتجين وجادّين، وقد ننسى اللعب في الطريق. تدعوك هذه الورشة الفردية لاستعادة الفضول والفرح والخيال مع البقاء متّصلاً بالواقع."
+    ],
+    [
+      "THE ADULT",
+      "الراشد"
+    ],
+    [
+      "Build with intention.",
+      "ابنِ بنيّة واضحة."
+    ],
+    [
+      "Bring structure, discernment and practical steps to your dreams.",
+      "امنح أحلامك التنظيم والتمييز والخطوات العملية."
+    ],
+    [
+      "THE CHILD",
+      "الطفل"
+    ],
+    [
+      "Live with wonder.",
+      "عِش بدهشة."
+    ],
+    [
+      "Bring play, possibility, trust and the courage to try.",
+      "استعد اللعب والإمكانات والثقة والشجاعة على المحاولة."
+    ],
+    [
+      "In our one-on-one session, we explore where life has become too heavy, reconnect with what makes you feel alive, and design a small experiment in play that fits your real life.",
+      "في جلستنا الفردية نستكشف ما جعل الحياة ثقيلة، ونتواصل مجدداً مع ما ينعشك، ونصمّم تجربة بسيطة من اللعب تناسب حياتك اليومية."
+    ],
+    [
+      "Explore the 1:1 workshop",
+      "اكتشف الورشة الفردية"
+    ],
+    [
+      "A LITTLE MORE WONDER. A LITTLE LESS WEIGHT.",
+      "دهشة أكثر. ثقل أقل."
+    ]
+  ]
+};
+for(const [lang,entries] of Object.entries(playWorkshopPairs)){const dict=dictionaries[lang];if(dict)for(const [source,translation] of entries)dict.set(source,translation);}
 const metadataTranslations={
   "en": {
     "title": "Life & Freedom Coaching | Serge Abi",
