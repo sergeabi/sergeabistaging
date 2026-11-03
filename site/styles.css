@@ -609,3 +609,25 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
 .play-workshop-visual-note{font-size:11px;letter-spacing:.17em;line-height:1.8;color:#d7c49a;text-align:center;max-width:270px}
 @media(max-width:900px){.play-workshop-layout{grid-template-columns:1fr}.play-workshop-visual{min-height:340px;max-width:650px}.play-workshop-art{width:230px}.play-workshop-duality{gap:22px}}
 @media(max-width:560px){.play-workshop-duality{grid-template-columns:1fr}.play-workshop-visual{min-height:270px}.play-workshop-art{width:180px}.play-workshop-copy h2{font-size:clamp(39px,10vw,54px)}}
+
+/* Compact progressive disclosure for The Art of Play; mirrors the My Story control. */
+.play-workshop{padding-top:clamp(54px,6vw,95px);padding-bottom:clamp(54px,6vw,95px)}
+.play-workshop-layout{margin-top:clamp(26px,3.2vw,48px);gap:clamp(30px,4.4vw,72px)}
+.play-workshop-copy h2{font-size:clamp(39px,4.4vw,68px);margin:13px 0 19px}
+.play-workshop-copy .play-workshop-lead{font-size:clamp(17px,1.4vw,21px);margin-bottom:0}
+.play-workshop-details{margin-top:24px}
+.play-workshop-details>summary{list-style:none;cursor:pointer}
+.play-workshop-details>summary::-webkit-details-marker{display:none}
+.play-workshop-details .about-story-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:11px 24px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold);font:800 12px/1.3 var(--sans);letter-spacing:.045em;transition:background .25s,color .25s}
+.play-workshop-details .about-story-button svg{width:18px;height:18px;transition:transform .25s}
+.play-workshop-details .about-story-button:hover{background:var(--gold);color:var(--bg)}
+.play-workshop-details[open] .about-story-button svg{transform:rotate(90deg)}
+.play-workshop-details summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.play-workshop-expanded{margin-top:22px;max-width:680px;border-left:2px solid var(--gold);padding:4px 0 4px 20px}
+.play-workshop-expanded>p{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 17px}
+.play-workshop-expanded .play-workshop-duality{margin:24px 0}
+.play-workshop-expanded .play-workshop-outcome{border-left:0;padding-left:0}
+.play-workshop-visual{min-height:390px}
+.play-workshop-art{width:min(100%,265px)}
+@media(max-width:900px){.play-workshop-visual{min-height:280px}.play-workshop-art{width:195px}}
+@media(max-width:560px){.play-workshop-visual{min-height:240px}.play-workshop-art{width:160px}.play-workshop-copy h2{font-size:clamp(37px,9.2vw,50px)}}
