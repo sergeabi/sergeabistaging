@@ -322,15 +322,17 @@ while(walker.nextNode()){const node=walker.currentNode;if(node.nodeValue.trim())
 const originalAttributes=[];
 document.querySelectorAll('[alt],[aria-label],[title]').forEach(el=>['alt','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr))originalAttributes.push({el,attr,source:el.getAttribute(attr)});}));
 function applyLanguage(lang, persist=false){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello, I’m on the Sergeabi.com website! Can you assist me?';ayaWidget.href='https://wa.me/33756987598?text='+encodeURIComponent(greeting);}if(persist)localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
+// English is the site's source language, not a translation dictionary entry.
+function isSupportedLanguage(lang){return lang==='en'||Object.prototype.hasOwnProperty.call(dictionaries,lang);}
 function browserPreferredLanguage(){
   const preferences=Array.isArray(navigator.languages)&&navigator.languages.length?navigator.languages:[navigator.language||'en'];
   for(const preference of preferences){
     const base=String(preference||'').toLowerCase().split(/[-_]/)[0];
-    if(Object.prototype.hasOwnProperty.call(dictionaries,base))return base;
+    if(isSupportedLanguage(base))return base;
   }
   return 'en';
 }
 languageButtons.forEach(button=>button.addEventListener('click',()=>applyLanguage(button.dataset.language,true)));
 const savedLanguage=localStorage.getItem('serge-language');
-applyLanguage(savedLanguage&&Object.prototype.hasOwnProperty.call(dictionaries,savedLanguage)?savedLanguage:browserPreferredLanguage());
+applyLanguage(savedLanguage&&isSupportedLanguage(savedLanguage)?savedLanguage:browserPreferredLanguage());
 
