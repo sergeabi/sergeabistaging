@@ -86,6 +86,10 @@ for(const [lang, entries] of Object.entries(editorialStoryPairs)){const dict=dic
 const playWorkshopPairs={
   "fr": [
     [
+      "LEARN MORE",
+      "EN SAVOIR PLUS"
+    ],
+    [
       "THE ART OF PLAY",
       "L’ART DE JOUER"
     ],
@@ -148,6 +152,10 @@ const playWorkshopPairs={
   ],
   "es": [
     [
+      "LEARN MORE",
+      "SABER MÁS"
+    ],
+    [
       "THE ART OF PLAY",
       "EL ARTE DE JUGAR"
     ],
@@ -209,6 +217,10 @@ const playWorkshopPairs={
     ]
   ],
   "ar": [
+    [
+      "LEARN MORE",
+      "اعرف المزيد"
+    ],
     [
       "THE ART OF PLAY",
       "فن اللعب"
