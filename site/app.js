@@ -86,6 +86,10 @@ for(const [lang, entries] of Object.entries(editorialStoryPairs)){const dict=dic
 const playWorkshopPairs={
   "fr": [
     [
+      "Serge Abi meditating with eyes closed and hands together in warm golden-hour light",
+      "Serge Abi médite, les yeux fermés et les mains jointes, dans une lumière dorée"
+    ],
+    [
       "LEARN MORE",
       "EN SAVOIR PLUS"
     ],
@@ -152,6 +156,10 @@ const playWorkshopPairs={
   ],
   "es": [
     [
+      "Serge Abi meditating with eyes closed and hands together in warm golden-hour light",
+      "Serge Abi meditando con los ojos cerrados y las manos juntas bajo una cálida luz dorada"
+    ],
+    [
       "LEARN MORE",
       "SABER MÁS"
     ],
@@ -217,6 +225,10 @@ const playWorkshopPairs={
     ]
   ],
   "ar": [
+    [
+      "Serge Abi meditating with eyes closed and hands together in warm golden-hour light",
+      "سيرج أبي يتأمل بعينين مغمضتين ويدين متلاصقتين في ضوء الغروب الذهبي"
+    ],
     [
       "LEARN MORE",
       "اعرف المزيد"
