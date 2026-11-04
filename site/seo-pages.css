@@ -81,3 +81,6 @@ footer .cookie-preferences-link{color:var(--muted)}
   }
 }
 
+
+/* Match the existing mobile cookie banner, with a slightly softer translucent background. */
+@media(max-width:760px){.cookie-banner{background:rgba(18,25,19,.72)}}
