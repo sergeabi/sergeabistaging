@@ -81,3 +81,26 @@ footer .cookie-preferences-link{color:var(--muted)}
   }
 }
 
+
+
+/* Mobile consent matches the approved bottom-bar reference, with shorter copy.
+   Only presentation changes; consent behavior remains in cookies.js. */
+@media(max-width:760px){
+  #cookie-consent-root{position:fixed;left:0;right:0;bottom:0;width:100%;max-width:none;z-index:120}
+  #cookie-consent-root .cookie-banner{
+    width:100%;max-height:calc(100dvh - 12px);overflow-y:auto;
+    border-radius:0;border-left:0;border-right:0;border-bottom:0;
+    padding:18px clamp(18px,5vw,32px) calc(18px + env(safe-area-inset-bottom));
+    background:rgba(18,25,19,.9);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  }
+  #cookie-consent-root .cookie-banner h2{font-size:18px;line-height:1.25;margin:0 0 8px}
+  #cookie-consent-root .cookie-banner p{font-size:12px;line-height:1.55}
+  #cookie-consent-root .cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  #cookie-consent-root .cookie-actions button{
+    flex:1 1 calc(50% - 5px);min-height:44px;padding:10px 12px;font-size:12px;
+  }
+  #cookie-consent-root .cookie-actions .cookie-quiet{
+    flex:1 1 100%;min-height:34px;background:transparent;border-color:transparent;
+  }
+}
