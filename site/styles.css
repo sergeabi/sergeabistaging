@@ -643,3 +643,43 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
 @media(min-width:1101px){.site-header .desktop-nav{gap:clamp(13px,1.65vw,25px)}}
 .site-header .desktop-nav a[href="/explore/"]{color:var(--gold)}
 #mobile-nav a[href="/explore/"]{color:var(--gold)}
+
+
+/* Mobile consent matches the approved bottom-bar reference, with shorter copy.
+   Only presentation changes; consent behavior remains in cookies.js. */
+@media(max-width:760px){
+  #cookie-consent-root{position:fixed;left:0;right:0;bottom:0;width:100%;max-width:none;z-index:120}
+  #cookie-consent-root .cookie-banner{
+    width:100%;max-height:calc(100dvh - 12px);overflow-y:auto;
+    border-radius:0;border-left:0;border-right:0;border-bottom:0;
+    padding:18px clamp(18px,5vw,32px) calc(18px + env(safe-area-inset-bottom));
+    background:rgba(18,25,19,.9);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  }
+  #cookie-consent-root .cookie-banner h2{font-size:18px;line-height:1.25;margin:0 0 8px}
+  #cookie-consent-root .cookie-banner p{font-size:12px;line-height:1.55}
+  #cookie-consent-root .cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  #cookie-consent-root .cookie-actions button{
+    flex:1 1 calc(50% - 5px);min-height:44px;padding:10px 12px;font-size:12px;
+  }
+  #cookie-consent-root .cookie-actions .cookie-quiet{
+    flex:1 1 100%;min-height:34px;background:transparent;border-color:transparent;
+  }
+}
+
+/* Allow scrolling to the last link in the mobile menu and keep chat unobtrusive. */
+@media(max-width:760px){
+  .site-header #mobile-nav:not([hidden]){
+    position:fixed;top:81px;bottom:0;
+    height:calc(100dvh - 81px);max-height:calc(100dvh - 81px);
+    overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:16px clamp(22px,5vw,36px) calc(125px + env(safe-area-inset-bottom));
+    justify-content:flex-start;z-index:100;
+  }
+  .site-header #mobile-nav:not([hidden])>a,
+  .site-header #mobile-nav:not([hidden])>.mobile-language{flex-shrink:0}
+  body.menu-open .aya-chat-widget,body.menu-open .back-top{
+    visibility:hidden;pointer-events:none
+  }
+}
