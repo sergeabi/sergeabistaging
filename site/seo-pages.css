@@ -81,3 +81,26 @@ footer .cookie-preferences-link{color:var(--muted)}
   }
 }
 
+
+/* Mobile cookie banner: exact layout rules from merged PR #41 (Nov 2026).
+   Preserve current GA4 consent wording, v2 storage key and behavior. */
+/* Mobile cookie banner uses the same edge-to-edge bottom bar as desktop. */
+@media(max-width:760px){
+  #cookie-consent-root{
+    left:0;right:0;bottom:0;width:100%;max-width:none;
+  }
+  .cookie-banner{
+    width:100%;max-height:calc(100dvh - 12px);
+    border-radius:0;border-left:0;border-right:0;border-bottom:0;
+    padding:18px clamp(18px,5vw,32px) calc(18px + env(safe-area-inset-bottom));
+  }
+  .cookie-actions{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .cookie-actions button{
+    flex:1 1 calc(50% - 5px);
+  }
+  .cookie-actions .cookie-quiet{
+    flex:1 1 100%;
+  }
+}
