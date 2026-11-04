@@ -636,3 +636,5 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
 .play-workshop .play-workshop-visual{min-height:0;aspect-ratio:1/1;padding:0;overflow:hidden;display:block;border-radius:8px;background:#34291f;box-shadow:0 22px 55px #0005}
 .play-workshop .play-workshop-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 @media(max-width:900px){.play-workshop .play-workshop-visual{width:min(100%,560px);margin-inline:auto}}
+
+.seo-expansion-links{display:flex;justify-content:center;gap:clamp(14px,2vw,30px);padding:22px var(--gutter);flex-wrap:wrap;border-top:1px solid var(--line)}.seo-expansion-links a{color:var(--gold);text-decoration:none;font-size:13px;letter-spacing:.04em}.seo-expansion-links a:hover{text-decoration:underline}

@@ -1,0 +1,202 @@
+[
+  {
+    "number": 1,
+    "slug": "life-coaching",
+    "title": "Life & Freedom Coaching",
+    "description": "Private coaching to find clarity, direction and room for a life that feels like yours.",
+    "keyword": "life coaching",
+    "kind": "service",
+    "image": "serge-portrait-warm.webp",
+    "url": "https://sergeabi.com/life-coaching/"
+  },
+  {
+    "number": 2,
+    "slug": "personal-transformation-coaching",
+    "title": "Personal Transformation Coaching",
+    "description": "Explore meaningful change through reflection, practical decisions and real-world experiments.",
+    "keyword": "personal transformation coaching",
+    "kind": "service",
+    "image": "serge-portrait-armchair.webp",
+    "url": "https://sergeabi.com/personal-transformation-coaching/"
+  },
+  {
+    "number": 3,
+    "slug": "life-purpose-coaching",
+    "title": "Life Purpose & Clarity Coaching",
+    "description": "Move from uncertainty to a clearer sense of what matters and what comes next.",
+    "keyword": "life purpose coaching",
+    "kind": "service",
+    "image": "serge-portrait-mountain.webp",
+    "url": "https://sergeabi.com/life-purpose-coaching/"
+  },
+  {
+    "number": 4,
+    "slug": "career-change-coaching",
+    "title": "Career Change & Life Transitions",
+    "description": "Navigate a career crossroads without losing sight of your health, values and finances.",
+    "keyword": "career change coaching",
+    "kind": "service",
+    "image": "serge-portrait-walk-with-me.webp",
+    "url": "https://sergeabi.com/career-change-coaching/"
+  },
+  {
+    "number": 5,
+    "slug": "art-of-play",
+    "title": "The Art of Play — Private 1:1 Workshop",
+    "description": "Bring back curiosity, lightness and childlike wonder without abandoning adult responsibility.",
+    "keyword": "inner child workshop",
+    "kind": "service",
+    "image": "serge-portrait-meditation.webp",
+    "url": "https://sergeabi.com/art-of-play/"
+  },
+  {
+    "number": 6,
+    "slug": "mindfulness-breathwork",
+    "title": "Mindfulness & Breathwork Sessions",
+    "description": "Ground yourself through attention, breathing and an accessible reflective practice.",
+    "keyword": "mindfulness coaching",
+    "kind": "service",
+    "image": "serge-portrait-shawl.webp",
+    "url": "https://sergeabi.com/mindfulness-breathwork/"
+  },
+  {
+    "number": 7,
+    "slug": "coaching-for-feeling-stuck",
+    "title": "Coaching When You Feel Stuck in Life",
+    "description": "Explore the difference between being truly trapped and needing a different first step.",
+    "keyword": "feeling stuck in life coaching",
+    "kind": "audience",
+    "image": "serge-portrait-scarf.webp",
+    "url": "https://sergeabi.com/coaching-for-feeling-stuck/"
+  },
+  {
+    "number": 8,
+    "slug": "entrepreneur-life-coaching",
+    "title": "Life Coaching for Entrepreneurs",
+    "description": "Build a business that makes room for a life rather than consuming all of it.",
+    "keyword": "life coach for entrepreneurs",
+    "kind": "audience",
+    "image": "serge-portrait-walk-with-me.webp",
+    "url": "https://sergeabi.com/entrepreneur-life-coaching/"
+  },
+  {
+    "number": 9,
+    "slug": "life-coach-nice",
+    "title": "Life Coach in Nice, France",
+    "description": "Private coaching for people in Nice and beyond who are navigating change.",
+    "keyword": "life coach Nice France",
+    "kind": "audience",
+    "image": "serge-portrait-warm.webp",
+    "url": "https://sergeabi.com/life-coach-nice/"
+  },
+  {
+    "number": 10,
+    "slug": "online-life-coaching",
+    "title": "Online Life Coaching",
+    "description": "Find focused, private guidance wherever your current chapter happens to be.",
+    "keyword": "online life coaching",
+    "kind": "audience",
+    "image": "serge-portrait-armchair.webp",
+    "url": "https://sergeabi.com/online-life-coaching/"
+  },
+  {
+    "number": 11,
+    "slug": "journal/how-to-find-your-purpose-in-life",
+    "title": "How to Find Your Purpose in Life",
+    "description": "A practical reflection on purpose, values and the next honest experiment.",
+    "keyword": "how to find your purpose in life",
+    "kind": "guide",
+    "image": "serge-portrait-mountain.webp",
+    "url": "https://sergeabi.com/journal/how-to-find-your-purpose-in-life/"
+  },
+  {
+    "number": 12,
+    "slug": "journal/how-to-change-your-life",
+    "title": "How to Change Your Life When You Feel Stuck",
+    "description": "Start changing your life without demanding a perfect plan or a dramatic escape.",
+    "keyword": "how to change your life",
+    "kind": "guide",
+    "image": "serge-portrait-mountain.webp",
+    "url": "https://sergeabi.com/journal/how-to-change-your-life/"
+  },
+  {
+    "number": 13,
+    "slug": "journal/how-to-reinvent-yourself-after-30",
+    "title": "How to Reinvent Yourself After 30",
+    "description": "Reconsider identity, work and ambition without treating the past as wasted time.",
+    "keyword": "reinvent yourself after 30",
+    "kind": "guide",
+    "image": "serge-portrait-scarf.webp",
+    "url": "https://sergeabi.com/journal/how-to-reinvent-yourself-after-30/"
+  },
+  {
+    "number": 14,
+    "slug": "journal/how-to-live-a-freer-life",
+    "title": "How to Create More Freedom in Your Life",
+    "description": "Explore freedom as choice, responsibility, boundaries and space for what matters.",
+    "keyword": "personal freedom in life",
+    "kind": "guide",
+    "image": "serge-portrait-walk-with-me.webp",
+    "url": "https://sergeabi.com/journal/how-to-live-a-freer-life/"
+  },
+  {
+    "number": 15,
+    "slug": "journal/life-coach-vs-therapist",
+    "title": "Life Coach vs Therapist: What's the Difference?",
+    "description": "Understand coaching and therapy, their limits and how to choose appropriate support.",
+    "keyword": "life coach vs therapist",
+    "kind": "guide",
+    "image": "serge-portrait-meditation.webp",
+    "url": "https://sergeabi.com/journal/life-coach-vs-therapist/"
+  },
+  {
+    "number": 16,
+    "slug": "journal/how-to-enjoy-life-again",
+    "title": "How to Enjoy Life Again as an Adult",
+    "description": "Rediscover simple pleasure, play and connection without pressuring yourself to feel happy.",
+    "keyword": "how to enjoy life again",
+    "kind": "guide",
+    "image": "serge-portrait-shawl.webp",
+    "url": "https://sergeabi.com/journal/how-to-enjoy-life-again/"
+  },
+  {
+    "number": 17,
+    "slug": "journal/how-to-build-a-life-you-love",
+    "title": "How to Build a Life You Love",
+    "description": "Turn your values into a real calendar, real choices and a life you can sustain.",
+    "keyword": "how to build a life you love",
+    "kind": "guide",
+    "image": "serge-portrait-walk-with-me.webp",
+    "url": "https://sergeabi.com/journal/how-to-build-a-life-you-love/"
+  },
+  {
+    "number": 18,
+    "slug": "about-serge-abi",
+    "title": "About Serge Abi — My Story",
+    "description": "From consulting and travel to coaching, conscious entrepreneurship and the search for freedom.",
+    "keyword": "Serge Abi life coach",
+    "kind": "about",
+    "image": "serge-portrait-scarf.webp",
+    "url": "https://sergeabi.com/about-serge-abi/"
+  },
+  {
+    "number": 19,
+    "slug": "my-journey-to-freedom",
+    "title": "From Corporate Life to Personal Freedom",
+    "description": "The choices, tradeoffs and lessons behind leaving a conventional career path.",
+    "keyword": "leaving corporate life",
+    "kind": "about",
+    "image": "serge-portrait-mountain.webp",
+    "url": "https://sergeabi.com/my-journey-to-freedom/"
+  },
+  {
+    "number": 20,
+    "slug": "retreats",
+    "title": "Retreats & Conscious Experiences",
+    "description": "Explore presence, connection and mindful experiences, with updates on future gatherings.",
+    "keyword": "mindfulness retreats",
+    "kind": "about",
+    "image": "serge-portrait-meditation.webp",
+    "url": "https://sergeabi.com/retreats/"
+  }
+]
