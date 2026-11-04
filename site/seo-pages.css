@@ -101,3 +101,22 @@ footer .cookie-preferences-link{color:var(--muted)}
   .cookie-options{padding-top:9px;gap:7px 12px}
   .cookie-options small{font-size:11px}
 }
+
+/* Restore the earlier inset mobile consent card dimensions (pre full-width bar). */
+@media (max-width:760px){
+  #cookie-consent-root{
+    left:12px;
+    right:12px;
+    bottom:calc(83px + env(safe-area-inset-bottom));
+    width:auto;
+    max-width:none;
+  }
+  #cookie-consent-root .cookie-banner{
+    width:100%;
+    max-height:calc(100dvh - 125px - env(safe-area-inset-bottom));
+    border:1px solid #c6a86e85;
+    border-radius:12px;
+    padding:12px 15px;
+    box-sizing:border-box;
+  }
+}
