@@ -1,33 +1,33 @@
 (() => {
-  const STORAGE_KEY = 'serge-cookie-choice-v1';
+  const STORAGE_KEY = 'serge-cookie-choice-v2';
   const SIX_MONTHS = 180 * 24 * 60 * 60 * 1000;
   const copy = {
     en: {
-      title: 'Your privacy matters', intro: 'We use necessary browser storage for language and accessibility settings. Optional analytics are currently inactive. You can choose what to allow.',
+      title: 'Your privacy matters', intro: 'We use necessary browser storage for language and accessibility settings. With your permission, we use Google Analytics to understand website visits. You can decline and still use the website.',
       accept: 'Accept optional', reject: 'Reject optional', customize: 'Customize', essential: 'Necessary storage', essentialNote: 'Always on — saves your essential preferences.',
-      analytics: 'Optional analytics', analyticsNote: 'Not currently active. If enabled later, it must respect this choice.',
+      analytics: 'Optional analytics', analyticsNote: 'Google Analytics measures page visits and usage only if you accept.',
       save: 'Save preferences', back: 'Back', policy: 'Privacy Policy', manage: 'Cookie preferences'
     },
     fr: {
-      title: 'Votre vie privée compte', intro: 'Nous utilisons un stockage nécessaire pour la langue et l’accessibilité. Les statistiques facultatives sont actuellement inactives. Vous pouvez choisir.',
+      title: 'Votre vie privée compte', intro: 'Nous utilisons un stockage nécessaire pour la langue et l’accessibilité. Avec votre accord, Google Analytics mesure les visites du site. Vous pouvez refuser et continuer à utiliser le site.',
       accept: 'Tout accepter', reject: 'Tout refuser', customize: 'Personnaliser', essential: 'Stockage nécessaire', essentialNote: 'Toujours actif — mémorise vos préférences essentielles.',
-      analytics: 'Statistiques facultatives', analyticsNote: 'Actuellement inactives. Toute activation future devra respecter ce choix.',
+      analytics: 'Statistiques facultatives', analyticsNote: 'Google Analytics mesure les visites et l’utilisation du site uniquement si vous acceptez.',
       save: 'Enregistrer mes choix', back: 'Retour', policy: 'Confidentialité', manage: 'Préférences cookies'
     },
     es: {
-      title: 'Tu privacidad importa', intro: 'Utilizamos almacenamiento necesario para el idioma y la accesibilidad. Las estadísticas opcionales están inactivas por ahora. Tú decides.',
+      title: 'Tu privacidad importa', intro: 'Utilizamos almacenamiento necesario para el idioma y la accesibilidad. Con tu permiso, Google Analytics mide las visitas. Puedes rechazarlo y seguir usando la web.',
       accept: 'Aceptar opcionales', reject: 'Rechazar opcionales', customize: 'Personalizar', essential: 'Almacenamiento necesario', essentialNote: 'Siempre activo: guarda las preferencias esenciales.',
-      analytics: 'Estadísticas opcionales', analyticsNote: 'Actualmente inactivas. Cualquier activación futura deberá respetar tu elección.',
+      analytics: 'Estadísticas opcionales', analyticsNote: 'Google Analytics mide las visitas y el uso del sitio solo si aceptas.',
       save: 'Guardar preferencias', back: 'Volver', policy: 'Política de privacidad', manage: 'Preferencias de cookies'
     },
     ar: {
-      title: 'خصوصيتك مهمة', intro: 'نستخدم التخزين الضروري لحفظ اللغة وإعدادات سهولة الوصول. التحليلات الاختيارية غير مفعلة حالياً. يمكنك اختيار ما تسمح به.',
+      title: 'خصوصيتك مهمة', intro: 'نستخدم التخزين الضروري لحفظ اللغة وإعدادات سهولة الوصول. بموافقتك، نستخدم Google Analytics لفهم زيارات الموقع. يمكنك الرفض والاستمرار في استخدام الموقع.',
       accept: 'قبول الاختياري', reject: 'رفض الاختياري', customize: 'تخصيص', essential: 'التخزين الضروري', essentialNote: 'نشط دائماً لحفظ تفضيلاتك الأساسية.',
-      analytics: 'تحليلات اختيارية', analyticsNote: 'غير مفعلة حالياً. أي تفعيل لاحق يجب أن يحترم اختيارك.',
+      analytics: 'تحليلات اختيارية', analyticsNote: 'يقيس Google Analytics الزيارات واستخدام الموقع فقط إذا وافقت.',
       save: 'حفظ التفضيلات', back: 'رجوع', policy: 'سياسة الخصوصية', manage: 'تفضيلات ملفات الارتباط'
     }
   };
-  const valid = data => data && data.version === 1 && typeof data.analytics === 'boolean'
+  const valid = data => data && data.version === 2 && typeof data.analytics === 'boolean'
     && typeof data.at === 'number' && Date.now() - data.at < SIX_MONTHS && Date.now() >= data.at;
   function read() {
     try { const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); return valid(data) ? data : null; }
@@ -59,7 +59,7 @@
     }}));
   }
   function save(analytics) {
-    decision = { version: 1, analytics: Boolean(analytics), at: Date.now() };
+    decision = { version: 2, analytics: Boolean(analytics), at: Date.now() };
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(decision)); } catch {}
     visible = false;
     detailed = false;
