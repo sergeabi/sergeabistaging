@@ -683,3 +683,15 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
     visibility:hidden;pointer-events:none
   }
 }
+
+/* Mobile consent placement polish: lifted slightly and more transparent.
+   Keeps the compact layout, equal consent actions and desktop untouched. */
+@media(max-width:760px){
+  #cookie-consent-root{
+    bottom:calc(24px + env(safe-area-inset-bottom));
+  }
+  #cookie-consent-root .cookie-banner{
+    background:rgba(18,25,19,.76);
+    max-height:calc(100dvh - 36px - env(safe-area-inset-bottom));
+  }
+}
