@@ -81,3 +81,12 @@ footer .cookie-preferences-link{color:var(--muted)}
   }
 }
 
+
+/* Mobile-only: visibly translucent consent banner, without changing its layout. */
+@media(max-width:760px){
+  .cookie-banner{
+    background:rgba(18,25,19,.64);
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+}
