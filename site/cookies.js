@@ -3,25 +3,25 @@
   const SIX_MONTHS = 180 * 24 * 60 * 60 * 1000;
   const copy = {
     en: {
-      title: 'Your privacy matters', intro: 'We use necessary browser storage for language and accessibility settings. With your permission, we use Google Analytics to understand website visits. You can decline and still use the website.',
+      title: 'Your privacy matters', intro: 'We use essential storage. With your permission, Google Analytics measures visits. You can decline.',
       accept: 'Accept optional', reject: 'Reject optional', customize: 'Customize', essential: 'Necessary storage', essentialNote: 'Always on — saves your essential preferences.',
       analytics: 'Optional analytics', analyticsNote: 'Google Analytics measures page visits and usage only if you accept.',
       save: 'Save preferences', back: 'Back', policy: 'Privacy Policy', manage: 'Cookie preferences'
     },
     fr: {
-      title: 'Votre vie privée compte', intro: 'Nous utilisons un stockage nécessaire pour la langue et l’accessibilité. Avec votre accord, Google Analytics mesure les visites du site. Vous pouvez refuser et continuer à utiliser le site.',
+      title: 'Votre vie privée compte', intro: 'Nous utilisons un stockage essentiel. Avec votre accord, Google Analytics mesure les visites. Vous pouvez refuser.',
       accept: 'Tout accepter', reject: 'Tout refuser', customize: 'Personnaliser', essential: 'Stockage nécessaire', essentialNote: 'Toujours actif — mémorise vos préférences essentielles.',
       analytics: 'Statistiques facultatives', analyticsNote: 'Google Analytics mesure les visites et l’utilisation du site uniquement si vous acceptez.',
       save: 'Enregistrer mes choix', back: 'Retour', policy: 'Confidentialité', manage: 'Préférences cookies'
     },
     es: {
-      title: 'Tu privacidad importa', intro: 'Utilizamos almacenamiento necesario para el idioma y la accesibilidad. Con tu permiso, Google Analytics mide las visitas. Puedes rechazarlo y seguir usando la web.',
+      title: 'Tu privacidad importa', intro: 'Usamos almacenamiento esencial. Con tu permiso, Google Analytics mide las visitas. Puedes rechazarlo.',
       accept: 'Aceptar opcionales', reject: 'Rechazar opcionales', customize: 'Personalizar', essential: 'Almacenamiento necesario', essentialNote: 'Siempre activo: guarda las preferencias esenciales.',
       analytics: 'Estadísticas opcionales', analyticsNote: 'Google Analytics mide las visitas y el uso del sitio solo si aceptas.',
       save: 'Guardar preferencias', back: 'Volver', policy: 'Política de privacidad', manage: 'Preferencias de cookies'
     },
     ar: {
-      title: 'خصوصيتك مهمة', intro: 'نستخدم التخزين الضروري لحفظ اللغة وإعدادات سهولة الوصول. بموافقتك، نستخدم Google Analytics لفهم زيارات الموقع. يمكنك الرفض والاستمرار في استخدام الموقع.',
+      title: 'خصوصيتك مهمة', intro: 'نستخدم التخزين الضروري. بموافقتك، يقيس Google Analytics زيارات الموقع. يمكنك الرفض.',
       accept: 'قبول الاختياري', reject: 'رفض الاختياري', customize: 'تخصيص', essential: 'التخزين الضروري', essentialNote: 'نشط دائماً لحفظ تفضيلاتك الأساسية.',
       analytics: 'تحليلات اختيارية', analyticsNote: 'يقيس Google Analytics الزيارات واستخدام الموقع فقط إذا وافقت.',
       save: 'حفظ التفضيلات', back: 'رجوع', policy: 'سياسة الخصوصية', manage: 'تفضيلات ملفات الارتباط'
