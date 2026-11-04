@@ -104,3 +104,15 @@ footer .cookie-preferences-link{color:var(--muted)}
     flex:1 1 100%;min-height:34px;background:transparent;border-color:transparent;
   }
 }
+
+/* Mobile consent placement polish: lifted slightly and more transparent.
+   Keeps the compact layout, equal consent actions and desktop untouched. */
+@media(max-width:760px){
+  #cookie-consent-root{
+    bottom:calc(24px + env(safe-area-inset-bottom));
+  }
+  #cookie-consent-root .cookie-banner{
+    background:rgba(18,25,19,.76);
+    max-height:calc(100dvh - 36px - env(safe-area-inset-bottom));
+  }
+}
