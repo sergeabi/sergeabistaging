@@ -643,3 +643,38 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
 @media(min-width:1101px){.site-header .desktop-nav{gap:clamp(13px,1.65vw,25px)}}
 .site-header .desktop-nav a[href="/explore/"]{color:var(--gold)}
 #mobile-nav a[href="/explore/"]{color:var(--gold)}
+
+/* Final mobile navigation accessibility: show more items and retain touch scrolling. */
+@media(max-width:760px){
+  .site-header #mobile-nav{
+    top:81px;
+    bottom:0;
+    height:calc(100vh - 81px);
+    height:calc(100dvh - 81px);
+    max-height:none;
+    min-height:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:12px 24px calc(38px + env(safe-area-inset-bottom));
+    gap:0;
+    align-items:stretch;
+  }
+  .site-header #mobile-nav .mobile-language{
+    margin:0 0 8px;
+    padding:0 0 8px;
+    flex-shrink:0;
+  }
+  .site-header #mobile-nav>a{
+    flex-shrink:0;
+    font-size:clamp(19px,5.1vw,23px);
+    line-height:1.25;
+    padding:9px 0;
+  }
+  .cookie-banner{
+    background:rgba(18,25,19,.64);
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+}
