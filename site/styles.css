@@ -701,3 +701,10 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
   .book .book-layout{grid-template-columns:minmax(0,1fr);gap:35px}
   .book .book-cover{width:min(68vw,300px)}
 }
+
+/* Mobile English hero line breaks only. Desktop and FR/ES/AR retain existing headings. */
+.hero-title-en-mobile{display:none}
+@media(max-width:760px){
+  html[lang="en"] .hero-sunset .hero-content h1 .hero-title-default{display:none}
+  html[lang="en"] .hero-sunset .hero-content h1 .hero-title-en-mobile{display:block}
+}
