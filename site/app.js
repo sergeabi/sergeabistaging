@@ -305,11 +305,11 @@ const coachingRefreshPairs={
     ],
     [
       "more to life?",
-      "plus à vivre ?"
+      "une meilleure vie ?"
     ],
     [
       "More freedom. More meaning. More you.",
-      "Plus de liberté. Plus de sens. Plus vous-même."
+      "Plus de liberté. Plus de sens. Plus de joie."
     ],
     [
       "I know that feeling. I was there too.",
