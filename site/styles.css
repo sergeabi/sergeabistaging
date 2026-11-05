@@ -678,3 +678,26 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
     backdrop-filter:blur(6px);
   }
 }
+
+/* English coaching conversion preview — retain the existing visual design. */
+.hero-sunset .hero-help{margin-top:14px;max-width:620px;color:#fff6e8;font:400 clamp(14px,1.12vw,17px)/1.55 var(--sans);text-shadow:0 1px 7px #0007}
+.testimonial-context{margin:16px 0 22px;color:var(--muted);font-size:14px;line-height:1.6;max-width:540px}
+.coaching-note a{color:var(--sunset-gold);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){
+ .hero-sunset .hero-help{font-size:14px;line-height:1.4;margin-top:12px}
+ .hero-sunset .hero-content{top:clamp(105px,12vh,150px)}
+ .hero-sunset .hero-invitation{margin-top:18px}
+ .hero-sunset .hero-rule{margin:14px 0 13px}
+ .hero-sunset .hero-buttons{margin-top:18px}
+ .hero-sunset .hero-buttons a{white-space:normal;text-align:center}
+ .testimonial-context{font-size:13px}
+}
+
+/* Supplied 109 cover — editorial book presentation. */
+.book .book-layout{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);align-items:center;gap:clamp(32px,5vw,85px)}
+.book .book-cover{margin:0;justify-self:center;width:min(100%,350px)}
+.book .book-cover img{display:block;width:100%;height:auto;aspect-ratio:350/498;object-fit:contain;box-shadow:0 22px 55px rgba(0,0,0,.28);border-radius:2px}
+@media(max-width:760px){
+  .book .book-layout{grid-template-columns:minmax(0,1fr);gap:35px}
+  .book .book-cover{width:min(68vw,300px)}
+}
