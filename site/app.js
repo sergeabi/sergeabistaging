@@ -308,7 +308,7 @@ const coachingRefreshPairs={
       "une meilleure vie ?"
     ],
     [
-      "More freedom. More meaning. More you.",
+      "More freedom. More meaning. More joy.",
       "Plus de liberté. Plus de sens. Plus de joie."
     ],
     [
@@ -406,7 +406,7 @@ const coachingRefreshPairs={
       "algo más en la vida?"
     ],
     [
-      "More freedom. More meaning. More you.",
+      "More freedom. More meaning. More joy.",
       "Más libertad. Más sentido. Más tú."
     ],
     [
@@ -504,7 +504,7 @@ const coachingRefreshPairs={
       "ما هو أكثر؟"
     ],
     [
-      "More freedom. More meaning. More you.",
+      "More freedom. More meaning. More joy.",
       "حرية أكبر. معنى أعمق. وحياة تشبهك أكثر."
     ],
     [
