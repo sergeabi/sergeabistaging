@@ -721,28 +721,25 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
   .site-header .brand-logo-image{width:clamp(156px,49vw,172px)}
   .site-header .language-current,.site-header .language-chevron{display:none}
 }
-/* Mobile hero: shorter distance below the buttons; compact gold down-cue. */
+/* Mobile hero: restore the original 52px gold arrow and lower it slightly. */
 @media(max-width:760px){
   .hero-sunset .hero-buttons{gap:9px}
   .hero-sunset .mobile-hero-scroll{
-    width:36px;height:36px;
-    margin:8px auto 0;
-    border:1px solid rgba(242,183,103,.7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    margin:33px auto 0;
+    border:1px solid rgba(242,183,103,.65);
     border-radius:50%;
-    background:rgba(13,18,15,.1);
-    position:relative;
+    background:rgba(13,18,15,.24);
+    color:var(--sunset-gold);
     box-shadow:none;
   }
   .hero-sunset .mobile-hero-scroll svg{
-    width:18px;height:18px;
-    stroke-width:1.6;
+    width:23px;height:23px;
+    stroke-width:1.8;
   }
-  .hero-sunset .mobile-hero-scroll:after{
-    content:'';
-    position:absolute;
-    top:calc(100% + 4px);left:50%;
-    width:1px;height:13px;
-    background:linear-gradient(to bottom,rgba(242,183,103,.6),transparent);
-    pointer-events:none;
-  }
+  .hero-sunset .mobile-hero-scroll:after{content:none}
 }
