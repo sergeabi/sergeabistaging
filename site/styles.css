@@ -692,3 +692,12 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
  .hero-sunset .hero-buttons a{white-space:normal;text-align:center}
  .testimonial-context{font-size:13px}
 }
+
+/* Supplied 109 cover — editorial book presentation. */
+.book .book-layout{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);align-items:center;gap:clamp(32px,5vw,85px)}
+.book .book-cover{margin:0;justify-self:center;width:min(100%,350px)}
+.book .book-cover img{display:block;width:100%;height:auto;aspect-ratio:350/498;object-fit:contain;box-shadow:0 22px 55px rgba(0,0,0,.28);border-radius:2px}
+@media(max-width:760px){
+  .book .book-layout{grid-template-columns:minmax(0,1fr);gap:35px}
+  .book .book-cover{width:min(68vw,300px)}
+}
