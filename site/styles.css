@@ -701,3 +701,11 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
   .book .book-layout{grid-template-columns:minmax(0,1fr);gap:35px}
   .book .book-cover{width:min(68vw,300px)}
 }
+
+/* Exactly one visible hero title: preserve default heading for desktop and translations. */
+.hero-sunset .hero-content h1 .hero-title-default{display:inline!important}
+.hero-sunset .hero-content h1 .hero-title-en-mobile{display:none!important}
+@media (max-width:760px){
+  html[lang="en"] .hero-sunset .hero-content h1 .hero-title-default{display:none!important}
+  html[lang="en"] .hero-sunset .hero-content h1 .hero-title-en-mobile{display:block!important}
+}
