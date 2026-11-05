@@ -678,3 +678,71 @@ body:is([data-reading-level="1"],[data-reading-level="2"]) .about-story-dark :is
     backdrop-filter:blur(6px);
   }
 }
+
+
+/* Mobile-only concise consent copy. Desktop retains existing full explanation. */
+.cookie-intro-mobile{display:none}
+@media(max-width:760px){
+  .cookie-intro-desktop{display:none}
+  .cookie-intro-mobile{display:inline}
+  #cookie-consent-root .cookie-banner p{
+    font-size:12px;
+    line-height:1.45;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+}
+
+/* Mobile header: bigger brand mark plus two actions and the menu on one line. */
+@media(max-width:760px){
+  .site-header{
+    padding-inline:clamp(11px,3.2vw,16px);
+    gap:4px;
+  }
+  .site-header .brand-sunset{flex:0 1 auto;min-width:0}
+  .site-header .brand-logo-image{
+    width:clamp(165px,48vw,202px);
+    max-width:100%;
+    height:auto;
+  }
+  .site-header .header-actions{display:flex;flex:0 0 auto;gap:3px}
+  .site-header .text-magnifier{width:30px;height:36px}
+  .site-header .text-magnifier svg{width:19px;height:19px}
+  .site-header .language-toggle{padding:6px 0;gap:2px;font-size:10px}
+  .site-header .language-globe{width:19px;height:19px}
+  .site-header .language-chevron{width:11px;height:11px}
+  .site-header .menu-toggle{flex:0 0 auto;padding:8px 0 8px 2px;gap:3px}
+  .site-header .language-current{font-size:10px}
+}
+@media(max-width:360px){
+  .site-header .brand-logo-image{width:clamp(156px,49vw,172px)}
+  .site-header .language-current,.site-header .language-chevron{display:none}
+}
+/* Mobile hero: shorter distance below the buttons; compact gold down-cue. */
+@media(max-width:760px){
+  .hero-sunset .hero-buttons{gap:9px}
+  .hero-sunset .mobile-hero-scroll{
+    width:36px;height:36px;
+    margin:8px auto 0;
+    border:1px solid rgba(242,183,103,.7);
+    border-radius:50%;
+    background:rgba(13,18,15,.1);
+    position:relative;
+    box-shadow:none;
+  }
+  .hero-sunset .mobile-hero-scroll svg{
+    width:18px;height:18px;
+    stroke-width:1.6;
+  }
+  .hero-sunset .mobile-hero-scroll:after{
+    content:'';
+    position:absolute;
+    top:calc(100% + 4px);left:50%;
+    width:1px;height:13px;
+    background:linear-gradient(to bottom,rgba(242,183,103,.6),transparent);
+    pointer-events:none;
+  }
+}
