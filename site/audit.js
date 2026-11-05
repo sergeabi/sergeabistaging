@@ -115,7 +115,7 @@
     root.innerHTML = `<div class="audit-panel audit-intro">
       <span class="micro">THE CROSSROADS AUDIT</span>
       <h3 data-audit-heading tabindex="-1">Where are you now\u2014and what is asking to change?</h3>
-      <p>A short private reflection across alignment, clarity, freedom and readiness. Your answers remain in this page unless you choose to request your report.</p>
+      <p>A short private reflection across alignment, clarity, freedom and readiness. After six questions, enter your name and email to receive your personalized report. Your email will only be used for delivery unless you separately opt in to updates.</p>
       <button class="audit-primary" type="button" data-audit-action="start">Begin the audit</button>
       <small>6 questions \u00b7 About 60\u201390 seconds</small>
     </div>`;
@@ -140,37 +140,33 @@
     focusHeading();
   }
 
+  // The report is never previewed on the page: a required contact form follows question six.
   function renderResult() {
-    const result = calculate();
-    const profile = profiles[result.profile];
-    const domain = domains.find(([value]) => value === state.answers.q1)?.[1] || domains[6][1];
-    if (state.emailOpen) return renderContact(result);
-    root.innerHTML = `<div class="audit-panel audit-result">
-      <span class="micro">YOUR CROSSROADS RESULT</span>
-      <p class="audit-result-label">Your current stage</p>
-      <h3 data-audit-heading tabindex="-1">${profile.title}</h3>
-      <p class="audit-result-summary">${profile.summary}</p>
-      <p class="audit-domain"><span>This appears most strongly in</span><strong>${domain}</strong></p>
-      <div class="audit-scores">${result.scores.map((value, index) => `<div class="audit-score"><div><span>${dimensions[index]}</span><strong>${value}%</strong></div><div class="audit-score-bar" aria-label="${dimensions[index]} ${value}%"><span style="width:${value}%"></span></div></div>`).join('')}</div>
-      <div class="audit-result-guidance"><div><span class="micro">A QUESTION TO SIT WITH</span><p>${profile.reflection}</p></div><div><span class="micro">YOUR NEXT SEVEN DAYS</span><p>${profile.action}</p></div></div>
-      <div class="audit-result-actions"><button type="button" class="audit-primary" data-audit-action="email">Email my full report</button><a class="audit-secondary" href="#connect">Explore a conversation</a></div>
+    return renderContact();
+  }
+
+  function renderSent() {
+    root.innerHTML = `<div class="audit-panel audit-confirmation">
+      <span class="micro">THANK YOU</span>
+      <h3 data-audit-heading tabindex="-1">Your report request is on its way.</h3>
+      <p>Check your inbox for your personalized Crossroads report. If you would like to explore your next steps together, I invite you to a free 15-minute discovery conversation.</p>
+      <div class="audit-result-actions"><a class="audit-primary" href="https://calendly.com/sergeabi/free" target="_blank" rel="noopener noreferrer">Book a free 15-minute call</a></div>
       <button type="button" class="audit-text-button" data-audit-action="restart">Start again</button>
-      <small class="audit-disclaimer">This reflection is not a medical or psychological assessment.</small>
     </div>`;
     focusHeading();
   }
 
-  function renderContact(result) {
+  function renderContact() {
     root.innerHTML = `<form class="audit-panel audit-contact" id="audit-result-form">
-      <span class="micro">${profiles[result.profile].title}</span>
-      <h3 data-audit-heading tabindex="-1">Where should we send your report?</h3>
+      <span class="micro">ONE LAST STEP</span>
+      <h3 data-audit-heading tabindex="-1">Get your personalized Crossroads report</h3><p>Enter your first name and email to receive your results. No report preview is shown before submission.</p>
       <label for="audit-name">First name</label><input id="audit-name" name="firstName" autocomplete="given-name" required>
       <label for="audit-email">Email address</label><input id="audit-email" name="email" type="email" autocomplete="email" required>
       <label class="audit-consent"><input name="deliveryConsent" type="checkbox" required><span>Send my personalized result and process my answers according to the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span></label>
       <label class="audit-consent"><input name="marketingConsent" type="checkbox"><span>Yes, I would also like thoughtful follow-up emails from Serge. I can unsubscribe at any time.</span></label>
-      <input type="hidden" name="profile" value="${escapeHtml(result.profile)}"><input type="hidden" name="primaryArea" value="${escapeHtml(state.answers.q1)}">
+      <input type="hidden" name="primaryArea" value="${escapeHtml(state.answers.q1)}">
       <div class="audit-trap" aria-hidden="true"><label for="audit-website">Website</label><input id="audit-website" name="website" tabindex="-1" autocomplete="off"></div>
-      <div class="audit-result-actions"><button class="audit-primary" type="submit">Send my report</button><button class="audit-secondary" type="button" data-audit-action="close-email">Back to my result</button></div>
+      <div class="audit-result-actions"><button class="audit-primary" type="submit">Send my report</button><button class="audit-secondary" type="button" data-audit-action="restart">Start again</button></div>
       <p class="form-status" id="audit-form-status" role="status" aria-live="polite"></p>
     </form>`;
     state.formOpenedAt ||= Date.now();
@@ -180,6 +176,7 @@
   function render() {
     if (state.phase === 'questions') renderQuestion();
     else if (state.phase === 'result') renderResult();
+    else if (state.phase === 'sent') renderSent();
     else renderIntro();
     translateAudit();
   }
@@ -227,9 +224,7 @@
     if (action === 'start') { state.phase = 'questions'; state.step = 0; }
     if (action === 'back') { if (state.step > 0) state.step -= 1; else state.phase = 'intro'; }
     if (action === 'restart') state = { phase: 'intro', step: 0, answers: {}, emailOpen: false };
-    if (action === 'email') state.emailOpen = true;
-    if (action === 'close-email') state.emailOpen = false;
-    render();
+        render();
   });
 
   // The answers go to the site's own server-side endpoint (functions/api/audit.js) in the request body, never in the
@@ -274,7 +269,8 @@
     status.classList.add(sent ? 'is-success' : 'is-error');
     form.removeAttribute('aria-busy');
     if (sent) {
-      form.querySelectorAll('input, button[type="submit"]').forEach(el => { el.disabled = true; });
+      state.phase = 'sent';
+      render();
     } else {
       button.disabled = false;
     }
