@@ -90,3 +90,20 @@ footer .cookie-preferences-link{color:var(--muted)}
     backdrop-filter:blur(6px);
   }
 }
+
+
+/* Mobile-only concise consent copy. Desktop retains existing full explanation. */
+.cookie-intro-mobile{display:none}
+@media(max-width:760px){
+  .cookie-intro-desktop{display:none}
+  .cookie-intro-mobile{display:inline}
+  #cookie-consent-root .cookie-banner p{
+    font-size:12px;
+    line-height:1.45;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+}
