@@ -296,6 +296,304 @@ const playWorkshopPairs={
   ]
 };
 for(const [lang,entries] of Object.entries(playWorkshopPairs)){const dict=dictionaries[lang];if(dict)for(const [source,translation] of entries)dict.set(source,translation);}
+/* Reviewed 2026 coaching-journey translations: key = original English text. */
+const coachingRefreshPairs={
+  "fr": [
+    [
+      "Do you feel there's",
+      "Sentez-vous qu'il existe"
+    ],
+    [
+      "more to life?",
+      "une meilleure vie ?"
+    ],
+    [
+      "More freedom. More meaning. More you.",
+      "Plus de liberté. Plus de sens. Plus de joie."
+    ],
+    [
+      "I know that feeling. I was there too.",
+      "Je connais ce sentiment. Je suis passé par là moi aussi."
+    ],
+    [
+      "I help people navigate life's crossroads, reconnect with themselves, and create a life that feels truly their own.",
+      "J’accompagne les personnes aux tournants de leur vie pour se reconnecter à elles-mêmes et construire une vie qui leur ressemble vraiment."
+    ],
+    [
+      "FREE 15-MINUTE CALL",
+      "APPEL GRATUIT DE 15 MIN"
+    ],
+    [
+      "Personal reflections from people who know me and have shared part of my journey.",
+      "Des témoignages personnels de personnes qui me connaissent et ont partagé une partie de mon parcours."
+    ],
+    [
+      "Three invitations to pause, question familiar patterns, and reconnect with what matters most.",
+      "Trois invitations à faire une pause, à questionner ses habitudes et à renouer avec l’essentiel."
+    ],
+    [
+      "Whether you are navigating a major transition, questioning your direction, or seeking more freedom in life and work, there is a way forward.",
+      "Que vous traversiez une grande transition, que vous interrogiez votre direction ou recherchiez plus de liberté dans votre vie et votre travail, un chemin est possible."
+    ],
+    [
+      "A focused 90-minute session to explore one important decision, find perspective, and identify practical next steps.",
+      "Une séance ciblée de 90 minutes pour explorer une décision importante, prendre du recul et identifier les prochaines étapes concrètes."
+    ],
+    [
+      "Eight weeks of private guidance: four sessions, a personal direction map and structured weekly check-ins to turn reflection into action.",
+      "Huit semaines d’accompagnement individuel : quatre séances, une feuille de route personnelle et des points hebdomadaires pour passer de la réflexion à l’action."
+    ],
+    [
+      "For entrepreneurs exploring how to build meaningful success without sacrificing freedom, balance or personal direction.",
+      "Pour les entrepreneurs qui souhaitent réussir sans sacrifier leur liberté, leur équilibre ou leur cap personnel."
+    ],
+    [
+      "Not sure which path fits?",
+      "Vous hésitez sur le bon accompagnement ?"
+    ],
+    [
+      "Book a free 15-minute discovery call",
+      "Réservez un appel découverte gratuit de 15 minutes"
+    ],
+    [
+      "to talk it through. Coaching is a reflective and practical process; it is not medical, mental-health, legal, financial or immigration advice.",
+      "pour en parler. Le coaching est une démarche de réflexion et d’action ; il ne remplace pas un avis médical, psychologique, juridique, financier ou migratoire."
+    ],
+    [
+      "A Two-Year-Plus Odyssey.",
+      "Une odyssée de plus de deux ans."
+    ],
+    [
+      "Get updates on the book",
+      "Recevoir des nouvelles du livre"
+    ],
+    [
+      "Email me to request occasional updates about the launch. No purchase or pre-order is required.",
+      "Écrivez-moi pour recevoir quelques nouvelles de sa sortie. Aucun achat ni précommande nécessaire."
+    ],
+    [
+      "Six questions. About 60–90 seconds. Enter your name and email after the questions to receive your personalized report.",
+      "Six questions, environ 60 à 90 secondes. Indiquez votre nom et votre adresse e-mail à la fin pour recevoir votre rapport personnalisé."
+    ],
+    [
+      "Book a free 15-minute discovery call to explore your situation and see whether working together is a good fit.",
+      "Réservez un appel découverte gratuit de 15 minutes pour parler de votre situation et voir si un accompagnement vous conviendrait."
+    ],
+    [
+      "Book a free 15-minute call",
+      "Réserver un appel gratuit de 15 minutes"
+    ],
+    [
+      "Chat with Serge",
+      "Discuter avec Serge"
+    ],
+    [
+      "Chat with Serge on WhatsApp",
+      "Discuter avec Serge sur WhatsApp"
+    ],
+    [
+      "109 — Footprints Beyond Borders: A Two-Year-Plus Odyssey, book cover with misty clouds and a mountain ridge",
+      "Couverture de 109 — Footprints Beyond Borders, une odyssée de plus de deux ans, avec nuages et montagnes"
+    ]
+  ],
+  "es": [
+    [
+      "Do you feel there's",
+      "¿Sientes que hay"
+    ],
+    [
+      "more to life?",
+      "algo más en la vida?"
+    ],
+    [
+      "More freedom. More meaning. More you.",
+      "Más libertad. Más sentido. Más tú."
+    ],
+    [
+      "I know that feeling. I was there too.",
+      "Conozco esa sensación. Yo también pasé por eso."
+    ],
+    [
+      "I help people navigate life's crossroads, reconnect with themselves, and create a life that feels truly their own.",
+      "Acompaño a personas en momentos decisivos para reconectar consigo mismas y construir una vida que realmente sientan suya."
+    ],
+    [
+      "FREE 15-MINUTE CALL",
+      "LLAMADA GRATIS DE 15 MIN"
+    ],
+    [
+      "Personal reflections from people who know me and have shared part of my journey.",
+      "Reflexiones personales de quienes me conocen y han compartido parte de mi camino."
+    ],
+    [
+      "Three invitations to pause, question familiar patterns, and reconnect with what matters most.",
+      "Tres invitaciones a hacer una pausa, cuestionar viejos hábitos y reconectar con lo esencial."
+    ],
+    [
+      "Whether you are navigating a major transition, questioning your direction, or seeking more freedom in life and work, there is a way forward.",
+      "Ya sea que estés atravesando una gran transición, cuestionando tu rumbo o buscando más libertad en tu vida y tu trabajo, hay un camino por delante."
+    ],
+    [
+      "A focused 90-minute session to explore one important decision, find perspective, and identify practical next steps.",
+      "Una sesión enfocada de 90 minutos para explorar una decisión importante, ganar perspectiva y definir los siguientes pasos prácticos."
+    ],
+    [
+      "Eight weeks of private guidance: four sessions, a personal direction map and structured weekly check-ins to turn reflection into action.",
+      "Ocho semanas de acompañamiento individual: cuatro sesiones, un mapa de dirección personal y seguimientos semanales para convertir la reflexión en acción."
+    ],
+    [
+      "For entrepreneurs exploring how to build meaningful success without sacrificing freedom, balance or personal direction.",
+      "Para emprendedores que quieren construir un éxito con sentido sin sacrificar su libertad, equilibrio o rumbo personal."
+    ],
+    [
+      "Not sure which path fits?",
+      "¿No sabes qué opción te conviene?"
+    ],
+    [
+      "Book a free 15-minute discovery call",
+      "Reserva una llamada de descubrimiento gratuita de 15 minutos"
+    ],
+    [
+      "to talk it through. Coaching is a reflective and practical process; it is not medical, mental-health, legal, financial or immigration advice.",
+      "para hablarlo. El coaching es un proceso de reflexión y acción; no sustituye el asesoramiento médico, de salud mental, legal, financiero ni migratorio."
+    ],
+    [
+      "A Two-Year-Plus Odyssey.",
+      "Una odisea de más de dos años."
+    ],
+    [
+      "Get updates on the book",
+      "Recibir noticias del libro"
+    ],
+    [
+      "Email me to request occasional updates about the launch. No purchase or pre-order is required.",
+      "Escríbeme si quieres recibir noticias ocasionales sobre el lanzamiento. No necesitas comprar ni reservar el libro."
+    ],
+    [
+      "Six questions. About 60–90 seconds. Enter your name and email after the questions to receive your personalized report.",
+      "Seis preguntas, unos 60–90 segundos. Al terminar, introduce tu nombre y correo electrónico para recibir tu informe personalizado."
+    ],
+    [
+      "Book a free 15-minute discovery call to explore your situation and see whether working together is a good fit.",
+      "Reserva una llamada de descubrimiento gratuita de 15 minutos para hablar de tu situación y ver si encaja trabajar juntos."
+    ],
+    [
+      "Book a free 15-minute call",
+      "Reservar una llamada gratis de 15 minutos"
+    ],
+    [
+      "Chat with Serge",
+      "Hablar con Serge"
+    ],
+    [
+      "Chat with Serge on WhatsApp",
+      "Hablar con Serge por WhatsApp"
+    ],
+    [
+      "109 — Footprints Beyond Borders: A Two-Year-Plus Odyssey, book cover with misty clouds and a mountain ridge",
+      "Portada de 109 — Footprints Beyond Borders, una odisea de más de dos años, con nubes y montañas"
+    ]
+  ],
+  "ar": [
+    [
+      "Do you feel there's",
+      "هل تشعر أن في الحياة"
+    ],
+    [
+      "more to life?",
+      "ما هو أكثر؟"
+    ],
+    [
+      "More freedom. More meaning. More you.",
+      "حرية أكبر. معنى أعمق. وحياة تشبهك أكثر."
+    ],
+    [
+      "I know that feeling. I was there too.",
+      "أعرف هذا الشعور. لقد مررت به أيضاً."
+    ],
+    [
+      "I help people navigate life's crossroads, reconnect with themselves, and create a life that feels truly their own.",
+      "أرافق الناس عند مفترقات الحياة ليسـتعيدوا صلتهم بأنفسهم ويبنوا حياة تعبّر عن حقيقتهم."
+    ],
+    [
+      "FREE 15-MINUTE CALL",
+      "مكالمة مجانية لمدة ١٥ دقيقة"
+    ],
+    [
+      "Personal reflections from people who know me and have shared part of my journey.",
+      "كلمات شخصية من أشخاص يعرفونني وشاركوا جزءاً من رحلتي."
+    ],
+    [
+      "Three invitations to pause, question familiar patterns, and reconnect with what matters most.",
+      "ثلاث دعوات للتوقف والتساؤل عن الأنماط المعتادة والعودة إلى ما يهم حقاً."
+    ],
+    [
+      "Whether you are navigating a major transition, questioning your direction, or seeking more freedom in life and work, there is a way forward.",
+      "سواء كنت تمر بتحول كبير أو تتساءل عن اتجاهك أو تبحث عن حرية أكبر في حياتك وعملك، فهناك طريق إلى الأمام."
+    ],
+    [
+      "A focused 90-minute session to explore one important decision, find perspective, and identify practical next steps.",
+      "جلسة مركزة من ٩٠ دقيقة لاستكشاف قرار مهم واكتساب منظور أوضح وتحديد خطوات عملية تالية."
+    ],
+    [
+      "Eight weeks of private guidance: four sessions, a personal direction map and structured weekly check-ins to turn reflection into action.",
+      "ثمانية أسابيع من المرافقة الفردية: أربع جلسات وخريطة طريق شخصية ومتابعة أسبوعية منظمة لتحويل التأمل إلى عمل."
+    ],
+    [
+      "For entrepreneurs exploring how to build meaningful success without sacrificing freedom, balance or personal direction.",
+      "لرواد الأعمال الذين يسعون إلى نجاح ذي معنى من دون التضحية بالحرية أو التوازن أو الاتجاه الشخصي."
+    ],
+    [
+      "Not sure which path fits?",
+      "ألست متأكداً من المسار الأنسب؟"
+    ],
+    [
+      "Book a free 15-minute discovery call",
+      "احجز مكالمة تعارف مجانية لمدة ١٥ دقيقة"
+    ],
+    [
+      "to talk it through. Coaching is a reflective and practical process; it is not medical, mental-health, legal, financial or immigration advice.",
+      "لنتحدث عنها. الإرشاد عملية تأمل وعمل ولا يحل محل المشورة الطبية أو النفسية أو القانونية أو المالية أو المتعلقة بالهجرة."
+    ],
+    [
+      "A Two-Year-Plus Odyssey.",
+      "رحلة تتجاوز العامين."
+    ],
+    [
+      "Get updates on the book",
+      "تلقَّ أخبار الكتاب"
+    ],
+    [
+      "Email me to request occasional updates about the launch. No purchase or pre-order is required.",
+      "راسلني لتصلك أخبار متفرقة عن صدور الكتاب. لا حاجة للشراء أو الطلب المسبق."
+    ],
+    [
+      "Six questions. About 60–90 seconds. Enter your name and email after the questions to receive your personalized report.",
+      "ستة أسئلة تستغرق نحو ٦٠ إلى ٩٠ ثانية. أدخل اسمك وبريدك الإلكتروني بعد الإجابة لتصلك نتيجتك الشخصية."
+    ],
+    [
+      "Book a free 15-minute discovery call to explore your situation and see whether working together is a good fit.",
+      "احجز مكالمة تعارف مجانية لمدة ١٥ دقيقة لنناقش وضعك ونرى ما إذا كان العمل معاً مناسباً."
+    ],
+    [
+      "Book a free 15-minute call",
+      "احجز مكالمة مجانية لمدة ١٥ دقيقة"
+    ],
+    [
+      "Chat with Serge",
+      "تحدّث مع سيرج"
+    ],
+    [
+      "Chat with Serge on WhatsApp",
+      "تحدّث مع سيرج عبر واتساب"
+    ],
+    [
+      "109 — Footprints Beyond Borders: A Two-Year-Plus Odyssey, book cover with misty clouds and a mountain ridge",
+      "غلاف كتاب 109 — آثار أقدام عبر الحدود: رحلة تتجاوز العامين، مع الغيوم والجبال"
+    ]
+  ]
+};
+for(const [lang,entries] of Object.entries(coachingRefreshPairs)){const dict=dictionaries[lang];if(dict)for(const [source,translation] of entries)dict.set(source,translation);}
 const metadataTranslations={
   "en": {
     "title": "Life & Freedom Coaching | Serge Abi",
@@ -321,7 +619,7 @@ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
 while(walker.nextNode()){const node=walker.currentNode;if(node.nodeValue.trim())originalTextNodes.push({node,source:node.nodeValue});}
 const originalAttributes=[];
 document.querySelectorAll('[alt],[aria-label],[title]').forEach(el=>['alt','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr))originalAttributes.push({el,attr,source:el.getAttribute(attr)});}));
-function applyLanguage(lang, persist=false){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello, I’m on the Sergeabi.com website! Can you assist me?';ayaWidget.href='https://wa.me/33756987598?text='+encodeURIComponent(greeting);}if(persist)localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
+function applyLanguage(lang, persist=false){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello Serge, I found your website and would love to connect.';ayaWidget.href='https://wa.me/33668975562?text='+encodeURIComponent(greeting);}if(persist)localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
 // English is the site's source language, not a translation dictionary entry.
 function isSupportedLanguage(lang){return lang==='en'||Object.prototype.hasOwnProperty.call(dictionaries,lang);}
 function browserPreferredLanguage(){

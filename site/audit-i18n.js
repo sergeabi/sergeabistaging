@@ -330,5 +330,114 @@
     }
     dictionaries[lang] = dict;
   }
+  // New email-gated result journey: localized copy in all supported languages.
+  const gatedAuditTranslations = {
+  "fr": [
+    [
+      "A short private reflection across alignment, clarity, freedom and readiness. After six questions, enter your name and email to receive your personalized report. Your email will only be used for delivery unless you separately opt in to updates.",
+      "Une courte réflexion sur l’alignement, la clarté, la liberté et la volonté de changer. Après les six questions, indiquez votre nom et votre e-mail pour recevoir votre rapport personnalisé. Votre adresse sera utilisée uniquement pour cet envoi, sauf si vous choisissez de recevoir aussi des nouvelles."
+    ],
+    [
+      "THANK YOU",
+      "MERCI"
+    ],
+    [
+      "Your report request is on its way.",
+      "Votre demande de rapport a bien été envoyée."
+    ],
+    [
+      "Check your inbox for your personalized Crossroads report. If you would like to explore your next steps together, I invite you to a free 15-minute discovery conversation.",
+      "Consultez votre boîte mail pour recevoir votre rapport Crossroads personnalisé. Si vous souhaitez explorer ensemble vos prochaines étapes, je vous propose un appel découverte gratuit de 15 minutes."
+    ],
+    [
+      "Book a free 15-minute call",
+      "Réserver un appel gratuit de 15 minutes"
+    ],
+    [
+      "ONE LAST STEP",
+      "UNE DERNIÈRE ÉTAPE"
+    ],
+    [
+      "Get your personalized Crossroads report",
+      "Recevez votre rapport Crossroads personnalisé"
+    ],
+    [
+      "Enter your first name and email to receive your results. No report preview is shown before submission.",
+      "Indiquez votre prénom et votre e-mail pour recevoir vos résultats. Aucun aperçu du rapport ne s’affiche avant l’envoi."
+    ]
+  ],
+  "es": [
+    [
+      "A short private reflection across alignment, clarity, freedom and readiness. After six questions, enter your name and email to receive your personalized report. Your email will only be used for delivery unless you separately opt in to updates.",
+      "Una breve reflexión sobre la coherencia, la claridad, la libertad y tu disposición al cambio. Tras las seis preguntas, introduce tu nombre y correo para recibir tu informe personalizado. Solo usaremos tu correo para enviarlo, salvo que aceptes recibir novedades."
+    ],
+    [
+      "THANK YOU",
+      "GRACIAS"
+    ],
+    [
+      "Your report request is on its way.",
+      "Tu solicitud de informe se ha enviado."
+    ],
+    [
+      "Check your inbox for your personalized Crossroads report. If you would like to explore your next steps together, I invite you to a free 15-minute discovery conversation.",
+      "Revisa tu bandeja de entrada para recibir tu informe Crossroads personalizado. Si quieres explorar juntos los próximos pasos, te invito a una llamada de descubrimiento gratuita de 15 minutos."
+    ],
+    [
+      "Book a free 15-minute call",
+      "Reservar una llamada gratis de 15 minutos"
+    ],
+    [
+      "ONE LAST STEP",
+      "UN ÚLTIMO PASO"
+    ],
+    [
+      "Get your personalized Crossroads report",
+      "Recibe tu informe Crossroads personalizado"
+    ],
+    [
+      "Enter your first name and email to receive your results. No report preview is shown before submission.",
+      "Introduce tu nombre y correo electrónico para recibir los resultados. No se muestra una vista previa del informe antes del envío."
+    ]
+  ],
+  "ar": [
+    [
+      "A short private reflection across alignment, clarity, freedom and readiness. After six questions, enter your name and email to receive your personalized report. Your email will only be used for delivery unless you separately opt in to updates.",
+      "تأمل قصير في الانسجام والوضوح والحرية والاستعداد للتغيير. بعد الأسئلة الستة، أدخل اسمك وبريدك الإلكتروني لتصلك نتيجتك الشخصية. لن نستخدم بريدك إلا لإرسال التقرير ما لم توافق بشكل منفصل على تلقي الأخبار."
+    ],
+    [
+      "THANK YOU",
+      "شكراً لك"
+    ],
+    [
+      "Your report request is on its way.",
+      "تم إرسال طلب تقريرك."
+    ],
+    [
+      "Check your inbox for your personalized Crossroads report. If you would like to explore your next steps together, I invite you to a free 15-minute discovery conversation.",
+      "تحقق من بريدك لتصلك نتيجة مفترق الطرق الشخصية. وإذا أردت استكشاف خطواتك التالية معاً، أدعوك إلى مكالمة تعارف مجانية لمدة ١٥ دقيقة."
+    ],
+    [
+      "Book a free 15-minute call",
+      "احجز مكالمة مجانية لمدة ١٥ دقيقة"
+    ],
+    [
+      "ONE LAST STEP",
+      "خطوة أخيرة"
+    ],
+    [
+      "Get your personalized Crossroads report",
+      "احصل على تقرير مفترق الطرق الشخصي"
+    ],
+    [
+      "Enter your first name and email to receive your results. No report preview is shown before submission.",
+      "أدخل اسمك الأول وبريدك الإلكتروني لتصلك النتائج. لا تُعرض معاينة للتقرير قبل الإرسال."
+    ]
+  ]
+};
+  for (const [lang, entries] of Object.entries(gatedAuditTranslations)) {
+    const dict = dictionaries[lang];
+    if (dict) for (const [english, translated] of entries) dict[english] = translated;
+  }
   window.sergeAuditDictionaries = dictionaries;
 })();
