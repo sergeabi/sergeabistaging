@@ -179,6 +179,6 @@ body.journal-page:is([data-reading-level="1"],[data-reading-level="2"]) :is(.jou
 
 /* November Journal editorial refinements */
 .journal-intro-side{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
-.journal-intro-portrait{margin:0;width:min(300px,100%)}
+.journal-intro-portrait{margin:0;width:min(390px,130%);max-width:130%}
 .journal-intro-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:5px}
-@media(max-width:760px){.journal-intro-portrait{width:min(240px,70vw)}}
+@media(max-width:760px){.journal-intro-portrait{width:min(310px,80vw);max-width:100%}}
