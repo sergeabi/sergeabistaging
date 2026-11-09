@@ -177,8 +177,26 @@ body.journal-page:is([data-reading-level="1"],[data-reading-level="2"]) :is(.jou
   }
 }
 
-/* November Journal editorial refinements */
-.journal-intro-side{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
-.journal-intro-portrait{margin:0;width:min(390px,130%);max-width:130%}
+/* Journal intention: intentional, balanced two-column composition. */
+.journal-intro{
+  grid-template-columns:minmax(0,390px) minmax(0,1fr);
+  column-gap:clamp(48px,5.5vw,108px);
+  align-items:start;
+}
+.journal-intro-side{display:flex;flex-direction:column;align-items:flex-start;gap:28px;min-width:0}
+.journal-intro-portrait{margin:0;width:100%;max-width:390px}
 .journal-intro-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:5px}
-@media(max-width:760px){.journal-intro-portrait{width:min(310px,80vw);max-width:100%}}
+.journal-intro-copy{min-width:0;padding-top:8px}
+.journal-intro-copy h2{margin-bottom:clamp(36px,3.5vw,58px)}
+.journal-intro-copy p+p{margin-top:28px}
+@media(max-width:1020px){
+  .journal-intro{grid-template-columns:1fr;gap:42px}
+  .journal-intro-portrait{max-width:350px}
+  .journal-intro-copy{padding-top:0}
+  .journal-intro-copy h2{margin-bottom:34px}
+}
+@media(max-width:760px){
+  .journal-intro{gap:34px}
+  .journal-intro-portrait{max-width:min(350px,88vw)}
+  .journal-intro-copy p+p{margin-top:22px}
+}
