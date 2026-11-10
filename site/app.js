@@ -594,6 +594,52 @@ const coachingRefreshPairs={
   ]
 };
 for(const [lang,entries] of Object.entries(coachingRefreshPairs)){const dict=dictionaries[lang];if(dict)for(const [source,translation] of entries)dict.set(source,translation);}
+/* 109 launch availability: current storefront language and book-section translations. */
+const bookLaunchPairs={
+  "fr": [
+    [
+      "AVAILABLE NOW",
+      "DISPONIBLE DÈS MAINTENANT"
+    ],
+    [
+      "Order 109 on Amazon",
+      "Commander 109 sur Amazon"
+    ],
+    [
+      "Available now in Kindle and paperback editions.",
+      "Disponible dès maintenant aux formats Kindle et broché."
+    ]
+  ],
+  "es": [
+    [
+      "AVAILABLE NOW",
+      "YA DISPONIBLE"
+    ],
+    [
+      "Order 109 on Amazon",
+      "Comprar 109 en Amazon"
+    ],
+    [
+      "Available now in Kindle and paperback editions.",
+      "Ya disponible en Kindle y en edición de tapa blanda."
+    ]
+  ],
+  "ar": [
+    [
+      "AVAILABLE NOW",
+      "متاح الآن"
+    ],
+    [
+      "Order 109 on Amazon",
+      "اطلب كتاب 109 عبر أمازون"
+    ],
+    [
+      "Available now in Kindle and paperback editions.",
+      "متاح الآن بصيغتي كيندل والنسخة الورقية."
+    ]
+  ]
+};
+for(const [lang,entries] of Object.entries(bookLaunchPairs)){const dict=dictionaries[lang];if(dict)for(const [source,translation] of entries)dict.set(source,translation);}
 const metadataTranslations={
   "en": {
     "title": "Life & Freedom Coaching | Serge Abi",
@@ -619,7 +665,7 @@ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
 while(walker.nextNode()){const node=walker.currentNode;if(node.nodeValue.trim())originalTextNodes.push({node,source:node.nodeValue});}
 const originalAttributes=[];
 document.querySelectorAll('[alt],[aria-label],[title]').forEach(el=>['alt','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr))originalAttributes.push({el,attr,source:el.getAttribute(attr)});}));
-function applyLanguage(lang, persist=false){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello Serge, I found your website and would love to connect.';ayaWidget.href='https://wa.me/33668975562?text='+encodeURIComponent(greeting);}if(persist)localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
+function applyLanguage(lang, persist=false){activeLanguage=dictionaries[lang]?lang:'en';const dict=dictionaries[activeLanguage]||new Map();document.documentElement.lang=activeLanguage;document.documentElement.dir=activeLanguage==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',activeLanguage==='ar');originalTextNodes.forEach(({node,source})=>{const lead=source.match(/^\s*/)?.[0]||'',trail=source.match(/\s*$/)?.[0]||'',key=source.trim();node.nodeValue=lead+(dict.get(key)||key)+trail;});originalAttributes.forEach(({el,attr,source})=>el.setAttribute(attr,dict.get(source)||source));const description=document.querySelector('meta[name="description"]');if(description){const sourceDescription=description.dataset.source||description.content;if(!description.dataset.source)description.dataset.source=sourceDescription;description.content=metadataTranslations[activeLanguage]?.description||sourceDescription;}document.title=metadataTranslations[activeLanguage]?.title||metadataTranslations.en.title;languageButtons.forEach(b=>{const selected=b.dataset.language===activeLanguage;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));});const bookOrderLink=document.querySelector('#book .book-copy a.line-link');if(bookOrderLink){bookOrderLink.href=activeLanguage==='fr'?'https://www.amazon.fr/dp/B0HQV6Q4ZZ':'https://www.amazon.com/dp/B0HQVL6SVS';}const ayaWidget=document.querySelector('.aya-chat-widget');if(ayaWidget){const greeting='Hello Serge, I found your website and would love to connect.';ayaWidget.href='https://wa.me/33668975562?text='+encodeURIComponent(greeting);}if(persist)localStorage.setItem('serge-language',activeLanguage);document.dispatchEvent(new CustomEvent('serge:languagechange',{detail:{language:activeLanguage}}));}
 // English is the site's source language, not a translation dictionary entry.
 function isSupportedLanguage(lang){return lang==='en'||Object.prototype.hasOwnProperty.call(dictionaries,lang);}
 function browserPreferredLanguage(){
