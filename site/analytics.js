@@ -56,6 +56,43 @@
     document.head.appendChild(script);
   }
 
+  // Track meaningful actions only when optional analytics consent is granted.
+  // These are intent signals; link clicks do not confirm Calendly bookings or Amazon purchases.
+  function trackEvent(name, parameters = {}) {
+    if (!allowed || typeof window.gtag !== 'function') return;
+    window.gtag('event', name, {
+      ...parameters,
+      page_language: document.documentElement.lang || 'en'
+    });
+  }
+
+  document.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href]');
+    if (!anchor) return;
+    let destination;
+    try {
+      destination = new URL(anchor.href, location.href);
+    } catch (_) {
+      return;
+    }
+    const hostname = destination.hostname.toLowerCase();
+    if (hostname === 'calendly.com' || hostname === 'www.calendly.com') {
+      trackEvent('booking_link_click', { link_destination: 'calendly' });
+    } else if (
+      (hostname === 'amazon.com' || hostname === 'www.amazon.com' ||
+       hostname === 'amazon.fr' || hostname === 'www.amazon.fr') &&
+      (destination.pathname.startsWith('/dp/B0HQVL6SVS') || destination.pathname.startsWith('/dp/B0HQV6Q4ZZ'))
+    ) {
+      trackEvent('book_link_click', { link_destination: hostname.endsWith('.fr') ? 'amazon_fr' : 'amazon_com' });
+    } else if (hostname === 'wa.me' || hostname === 'api.whatsapp.com') {
+      trackEvent('whatsapp_link_click', { link_destination: 'whatsapp' });
+    }
+  });
+
+  document.addEventListener('serge:audit-submitted', () => {
+    trackEvent('generate_lead', { lead_source: 'crossroads_audit' });
+  });
+
   function applyConsent(analytics) {
     if (analytics === true) enableAnalytics();
     else disableAnalytics();

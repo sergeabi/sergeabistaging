@@ -269,6 +269,8 @@
     status.classList.add(sent ? 'is-success' : 'is-error');
     form.removeAttribute('aria-busy');
     if (sent) {
+      // No personal data or audit answers are included in the analytics event.
+      document.dispatchEvent(new CustomEvent('serge:audit-submitted'));
       state.phase = 'sent';
       render();
     } else {
